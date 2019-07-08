@@ -15,7 +15,7 @@ public:
     int index;
 };
 
-StackNode* newNode(int data)
+StackNode* newNode(int data, int index)
 {
     StackNode* stackNode = new StackNode();
     stackNode->data = data;
@@ -34,13 +34,20 @@ int isEmpty(StackNode* root)
 
 void push(StackNode** root, int data, int pos)
 {
-    StackNode* node = newNode(data);
+    StackNode* node = newNode(data,pos);
     StackNode* temp = (*root);
-    while(temp->index < pos  && temp->next != NULL){
-        (temp) = (temp)->next;
+    if(temp==NULL || temp->index>pos){
+        node->next = (*root);
+        (*root) = node;
+    }else{
+        while(temp->next != NULL && temp->next->index < pos){
+            (temp) = (temp)->next;
+//            cout<<temp->data<<" temp data\n";
+        }
+        node->next = temp->next;
+        temp->next = node;
+//        cout<<node->data<<" node data\n";
     }
-    node->next = temp;
-    temp = node;
     //Your code here
 }
 
@@ -61,15 +68,24 @@ int pop(StackNode** root)
 int peek(StackNode* root)
 {
     if(isEmpty(root)){
-//        cout<<"Stack Underflow"<<endl;
+        cout<<"Stack Underflow"<<endl;
         return 0;
     }
     return root->data;
     //Your code here
 }
-};
 
 int main(){
-    StackNode s;
+    StackNode* root = NULL;
+
+    push(&root, 10,1);
+    push(&root, 20,2);
+    push(&root, 40,4);
+    push(&root, 30,3);
+
+    cout<<pop(&root)<<endl;
+    cout<<pop(&root)<<endl;
+    cout<<pop(&root)<<endl;
+
     return 0;
 }
