@@ -18,12 +18,12 @@ class Solution {
 	}
 	public static boolean check(int[] arr, int pos)
 	{
-		if((pos==arr.length-1 || arr[pos+1]-arr[pos]==1) && (arr[pos]-arr[pos-1]==1	|| pos==0))return true;
+		if(arr[pos+1]-arr[pos]==1) return true;
 		return false;
 	}
     public static void main(String args[]) 
     { 
-    	int[] arr = {1,3,4,5,6};
+    	int[] arr = {1,2,4,5,6};
     	int peak=find(arr);
     	if(peak==-1){System.out.println("No missing element found");}
     	else{System.out.println("Missing element: "+peak);}
