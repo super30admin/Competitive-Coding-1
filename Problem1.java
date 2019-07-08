@@ -1,7 +1,7 @@
 
 class Solution {
 	
-	public static int findPeak(int[] arr)
+	public static int find(int[] arr)
 	{
 		int mid,start=0,end=arr.length-1;
 		boolean flag = true;
@@ -24,8 +24,9 @@ class Solution {
     public static void main(String args[]) 
     { 
     	int[] arr = {1,3,4,5,6};
-    	int peak=findPeak(arr);
-    	System.out.println(peak);
+    	int peak=find(arr);
+    	if(peak==-1){System.out.println("No missing element found");}
+    	else{System.out.println("Missing element: "+peak);}
     	
         
     } 
