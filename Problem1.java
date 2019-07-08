@@ -13,7 +13,9 @@ public class missingElement {
                 start = middle+1;
             }
         }
-        if(middle == nums.length-1)
+        if (start>=nums.length)
+            return nums.length+1;
+        else if(middle == nums.length-1)
             return middle+1;
         else
             return start+1;
