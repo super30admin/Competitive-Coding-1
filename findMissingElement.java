@@ -9,42 +9,31 @@ Output  : 6
 
 //time complexity: O(n) ->one for loop
 
-class Solution
-{
+import java.io.*;
 
-	//returns missing element(if found), else -1
-	static int findMissing(int nums[])
-	{
-	int l = 0, r = nums.length - 1; 
-    while (l <= r)  
-    { 
-        int mid = (l + r) / 2;
-       
-        //if((mid == 0) && nums[mid] != mid + 1)
-        	//return (mid+1);
-        
-        //found the missing element
-        
-        if (nums[mid] != mid + 1 &&  
-                nums[mid - 1] == mid) 
-                return (mid + 1); 
-          
-        
-        if (nums[mid] != mid + 1) 
-            r = mid - 1; 
-      
-        else
-            l = mid + 1; 
-    } 
-  
-// if no element is missing 
-return -1;
-}
-	
-	public static void main(String args[])
-	{
-		int nums[] = {1,2,3,4,5,6,8,9};
-		System.out.println(findMissing(nums));
-	}
-	
+class GFG {
+    public static int search(int arr[], int size)
+    {
+        int low = 0; 
+        int high = size - 1;
+        int mid = 0; 
+        while(high - low >= 2)
+        {
+            mid = low + (high - low)/2;
+            int midIdxDiff = arr[mid] - mid;
+            int lowIdxDiff = arr[low] - low;
+            if(midIdxDiff != lowIdxDiff) {
+                high = mid;
+            } else {
+                low = mid;
+            }
+        }
+        return (arr[low] + arr[high])/2;
+    }
+    public static void main (String[] args) {
+          int ar[] = {1,2,3, 4,5,6, 8 }; 
+        int size = ar.length; 
+        System.out.println("Missing number: " + 
+                        search(ar, size)); 
+    }
 }
