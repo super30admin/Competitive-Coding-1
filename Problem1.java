@@ -16,6 +16,31 @@ import java.io.*;
 class Solution
 {
 
+
+	static int findMissingBinary(int nums[])
+	{
+		// 1 2 3 5 -> element 2, index 1
+		//
+		int low =0;
+		int high = nums.length-1;
+		int mid = low + (high-low)/2;;
+		while((high-low)>1)//to ensure you are not going into an infinite loop
+		{
+			mid = low + (high-low)/2; //index =1, element 2
+			if((nums[mid]-mid)!=(nums[low]-low)) //the difference always would be one, if it's not 1, then adjust the pointers accordingly
+			{
+				high = mid;
+			}
+			else if((nums[mid]-mid)!=(nums[high]-high))
+			{
+				low = mid;
+			}
+			
+		}
+		
+		return nums[mid]+1;
+	}
+	
 	//returns missing element(if found), else -1
 	static int findMissing(int nums[])
 	{
@@ -32,7 +57,8 @@ class Solution
 	
 	public static void main(String args[])
 	{
-		int nums[] = {1,2,3,4,5,6,7,8,9,10};
+		int nums[] = {1,2,3,4,5,6,7,9};
+		System.out.println(findMissingBinary(nums));
 		System.out.println(findMissing(nums));
 	}
 	
