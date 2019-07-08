@@ -2,14 +2,16 @@
 
 # Problem 1
 
-```Find a missing number in a sorted array with no duplicates.  Array has a size of n with numbers from 1 to n+1.
+Find a missing number in a sorted array with no duplicates.  Array has a size of n with numbers from 1 to n+1.
+
 Examples:
 
 Input : 1 3 4 5 6
 Output : 2
 
 Input  : 1 2 3 4 5 7 8 9 10
-Output  : 6```
+Output  : 6
+
 
 # Problem 2
 
