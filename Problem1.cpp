@@ -28,5 +28,7 @@ public:
 
 int main(){
     Solution s;
+    vector<int> vec{1,2,3,4,5,7,8,9,10};
+    cout<<s.problem(vec);
     return 0;
 }
