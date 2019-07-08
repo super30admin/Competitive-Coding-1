@@ -26,7 +26,6 @@ public class PriorityQueue {
 				head=temp;
 			}else {
 				Node start = head;
-				Node prev = null;
 				while(start.next!=null && start.next.priority<priority) {
 					start = start.next;
 				}
