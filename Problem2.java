@@ -1,6 +1,5 @@
 
 
-
 public class PriorityQList {
     ListNode head;
     int pri = Integer.MAX_VALUE;
@@ -69,8 +68,8 @@ public class PriorityQList {
     }
     public boolean isEmpty(){
         if (head == null)
-            return false;
-        return true;
+            return true;
+        return false;
     }
 
     public static void main(String[] args) {
@@ -79,7 +78,7 @@ public class PriorityQList {
         pq.push(5,2);
         pq.push(6,3);
         pq.push(7,0);
-        while (pq.isEmpty()){
+        while (!pq.isEmpty()){
             System.out.println(pq.pop());
         }
     }
