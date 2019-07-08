@@ -38,7 +38,7 @@ public class week1_Interview1 {
 		week1_Interview1 missingNumbers = new week1_Interview1(); 
         int arr[] = { 1, 2, 3, 4, 5, 7, 8, 9, 10 }; 
         int result = missingNumbers.binarySearch(arr); 
-        if(result ==0) System.out.println("No missing element");
+        if(result ==-1) System.out.println("No missing element");
         else
         System.out.println("Missing element is "+ result);
 	}
