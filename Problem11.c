@@ -4,7 +4,7 @@
  * 2. extractMin() : removes the min element from heap and then heapify it again
  * 3. insert() : based on minheap property, add the elements and heapify it.
  *
- *    Time Complexity : O(log n) for removal and insert operations
+ *    Time Complexity : O(log n) for removal and insert operations, O(1) for getMin()
  *    Space Complexity: O(n)
  *
  *   Name: Manish Kumar
@@ -16,11 +16,23 @@
 #include<string.h>
 
 #define UININITIALIZED_VAL 9999
+
 /* Function declaration */
 void heapify_after_insert(int *arr, int root_idx);
 void heapify_after_remove(int *arr, int root_idx, int curr_size);
 int insert_elem(int *curr_size, int *arr, int elem);
 void extract_min(int *arr, int *curr_size);
+int getMin(int *arr);
+
+/* Get top element in minheap */
+int getMin(int *arr) {
+	if (!arr) {
+		printf("Array pointer is NULL\n");
+		return UININITIALIZED_VAL;
+	} else {
+		return arr[0];
+	}
+}
 
 /* Heapify after extract_min operation is performed
  * Here, after removing the top element from heap, we move the last element

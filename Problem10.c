@@ -8,7 +8,7 @@
       step 3 subtract sum of step 1 from sum of step 2. You will get your answer
  *
  *    Time Complexity : O(n)
- *   
+ *    Space Complexity : O(1)   
  */
 
 #include<stdio.h>
