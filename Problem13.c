@@ -10,7 +10,7 @@
  *      1. Both strings are of same length
  *
  *    Time Complexity : O(n)
- *    Space Complexity : O(k) where k = 26 alphabet letters
+ *    Space Complexity : O(k) where k = 255 ASCII set
 
  */
 
@@ -20,53 +20,62 @@
 #include<stdlib.h>
 #include<ctype.h>
 
-#define NUM_ALPHABETS 26
+#define NUM_ASCII 255
 
 /* This function assumes that strings are equal in length
  * It finds out the isomorphic property of str_s using hash table
- *  Hash Table's key is the ASCII value mapped to 97 as index.
+ *  Hash Table's key is the ASCII value mapped to index.
  *  For eg : key : b value : c can be stored as 
- *     str_hash[('b' - 97)] = 'c'
+ *     str_hash['b'] = 'c'
  */
 
-bool is_string_isomorphic(char *str_s, char *str_t) {
-	char str_hash[NUM_ALPHABETS];
-	int idx = 0, str_len = 0;
+int isIsomorphic_helper_function(char *str_s, char *str_t) {
 
-    /* Validations */
-	if (!str_s || !str_t) {
-		printf("One or both of strings are NULL\n");
-		return false;
-	}
-	/* Assuming lengths are equal for both strings */
-    if (!(str_len = strlen(str_s))) {
-    	printf("String S is empty\n");
-    	return false;
-    }
-
+    char str_hash[NUM_ASCII];
+    int idx = 0;
     /* Clear out hash table for using it */
-    memset(str_hash, 0, NUM_ALPHABETS);
+    memset(str_hash, 0, NUM_ASCII);
 
+    int str_len = strlen(str_s);
     /* Check if letter is valid and for each letter check the hash table
      * See approach at top of program for more details
      */
     for (idx = 0; idx < str_len; idx++) {
-    	if (isalpha(str_s[idx]) && isalpha(str_t[idx])) {
-
-    		if (str_hash[str_s[idx] - 97] == '\0') {
-    			str_hash[str_s[idx] - 97] = str_t[idx];
-    		} else {
-    			if (str_hash[str_s[idx] - 97] != str_t[idx]) {
-    				/* Found a different letter for already existing hash key */
-    				return false;
-    			}
-    		}
-    	} else {
-    		printf("The letter is not alphabet str_s: [%c] str_t: [%c]\n", str_s[idx], str_t[idx]);
-    		return false;
-    	}
+                if (str_hash[str_s[idx]] == '\0') {
+                        str_hash[str_s[idx]] = str_t[idx];
+                } else {
+                        if (str_hash[str_s[idx]] != str_t[idx]) {
+                        /* Found a different letter for already existing hash key */
+                                return false;
+                        }
+                }
     } /* end of for loop */
-	return true;
+    return true;
+}
+
+bool is_string_isomorphic(char * str_s, char * str_t){
+
+    bool result_1, result_2;
+    /* Validations */
+        if (!str_s || !str_t) {
+                printf("One or both of strings are NULL\n");
+                return false;
+        }
+    if (!strlen(str_s) || !strlen(str_t)) {
+        return true;
+    }
+    /* Is str1 isomorphic to str2 ?*/
+    result_1 = isIsomorphic_helper_function(str_s, str_t);
+    if (result_1 == false) {
+        return false;
+    }
+    /* Is str2 isomorphic to str1 ?*/
+    result_2 = isIsomorphic_helper_function(str_t, str_s);
+    if (result_2 == false) {
+        return false;
+    }
+    /* If both properties are satisfied we can say that its isomorphic*/
+    return true;
 }
 
 /* Main routine for the program */
