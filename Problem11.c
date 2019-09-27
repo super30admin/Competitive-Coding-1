@@ -47,7 +47,7 @@ void heapify_after_remove(int *arr, int root_idx, int curr_size) {
 	int temp_var = 0;
 
     /* Base terminating condition for function */
-    if (right_child >= curr_size) {
+    if (right_child > curr_size) {
     	return;
     }
     /* if root value is greater than any of the child, then swap the values
@@ -55,7 +55,7 @@ void heapify_after_remove(int *arr, int root_idx, int curr_size) {
      */
 	if (arr[root_idx] > arr[left_child]) {
 		next_child_idx = left_child;
-	} else if (arr[root_idx > arr[right_child]]){
+	} else if (arr[root_idx] > arr[right_child]){
 		next_child_idx = right_child;
 	} else {
 		/* task is over */
