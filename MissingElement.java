@@ -1,4 +1,4 @@
-// Time Complexity : O(N) 
+// Time Complexity : O(N) and O(Log(N)) solution from online.
 // Space Complexity : O(Constant).
 // Did this code successfully run on Leetcode : Yes.
 // Any problem you faced while coding this : Nope.
@@ -25,5 +25,26 @@ class MissingElement {
         miss = nums[nums.length-1]+1;
         K++;
     return miss+k-K;
+    }
+	
+	  int missing(int index, int[] nums){
+        return nums[index] - nums[0] - index;
+    }
+    public int missingElement1(int[] nums, int k) {
+        int n = nums.length;
+        int last = missing(n-1,nums);
+        if(k > last){
+            return nums[n-1] + k-last;
+        }
+        int left = 0, right = n-1, mid;
+        while(left != right){
+            mid = left + (right-left)/2;
+            if(missing(mid,nums)<k){
+                left = mid +1;
+            }else{
+                right = mid;
+            }
+        }
+    return nums[left-1]+k-missing(left-1,nums);
     }
 }
