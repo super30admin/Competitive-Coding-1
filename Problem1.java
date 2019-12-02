@@ -2,6 +2,10 @@
 //There are no duplicates in list. One of the integers is missing in the list. 
 //Write an efficient code to find the missing integer.
 
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : 
 
 
 // Solution with O(n) complexity
