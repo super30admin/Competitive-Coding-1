@@ -20,6 +20,20 @@
 
 class MinHeap:
 
+    """
+        Insertion:
+            // Time Complexity: O(logn) to heapify
+        Deletion:
+            // Time Complexity: O(logn) to heapify
+        Peek:
+            // Time Complexity: O(1)
+        IsEmpty:
+            // Time Complexity: O(1)
+        For the whole heap:
+        // Space Complexity: O(n)
+           where 'n' is the number items
+    """
+
     def __init__(self, capacity=5):
         self._capacity = capacity
         self._size = 0
