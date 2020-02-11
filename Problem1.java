@@ -1,3 +1,12 @@
+/**
+ * time complexity: O(logN)
+ * space complexity: O(1)
+ * leetcode : successfull
+ * steps: match elements using their respective index. as this diff will remian same until the elemnt missing in array
+ *        once found using binary search, to navigate mid to left/ right. in the end when high-low drops below 2 , arr[low]+arr[high]/2 will give the missng number.
+ *         
+ */
+
 class Problem1{
     private int missingNum(int arr[]){
         if(arr.length==0||arr==null){return -1;}
