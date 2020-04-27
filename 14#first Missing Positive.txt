@@ -1,0 +1,44 @@
+// Time Complexity : 0(log n)
+// Space Complexity : 0(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// given array and size of array find missing number between 1 to size -1
+
+static int search(int ar[], int size) 
+{ 
+   //two pointers  pointing to start and end of array
+   int low = 0;
+   int high = size - 1;
+
+   // edge cases start and edge case for end
+   if(nums.length >= 1 && nums[0] != 1) // first number in array is not 1, then return 1
+ 	return 1;
+
+   if(nums.length > =1 && nums[size-1] != size+1) // if last number is not size+1 then return size+1
+	return size+1;
+
+   
+   while(low < high)
+   {
+	int mid =  low +(high -low)/2; // find mid index
+
+        // if element on left of mid is not one less than mid then return mid-1
+	if( mid - 1 >=0 && nums[mid -1] != nums[mid] -1)
+	    return nums[mid] -1;
+
+       // if element on right of mid is not one more than mid then return mid+1
+	if( mid + 1 <= size -1 && nums[mid+1] != nums[mid] +1)
+		return nums[mid]+1;
+
+       // if mid element value is same mid+1 then the left part is sorted and find item in right part so move low pointer
+	if( nums[mid] ==  mid +1 )
+		low = mid+1;
+	else // move high pointer as missing value is in left part
+	    high = mid-1;
+	
+   }
+   
+   return -1; // by default -1
+} 
