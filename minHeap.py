@@ -98,23 +98,4 @@ class MinHeap:
     def getMin(self):
         return self.Heap[self.FRONT] 
 
-# Driver Code 
-if __name__ == "__main__": 
-
-    print('The minHeap is ') 
-    minHeap = MinHeap(15) 
-    minHeap.insert(5) 
-    minHeap.insert(3) 
-    minHeap.insert(17) 
-    minHeap.insert(10) 
-    minHeap.insert(84) 
-    minHeap.insert(19) 
-    minHeap.insert(6) 
-    minHeap.insert(22) 
-    minHeap.insert(9) 
-    minHeap.minHeap() 
-
-    minHeap.Print() 
-    print("The Min val is " + str(minHeap.extractMin())) 
-    print("The Min val is " + str(minHeap.getMin() )) 
 
