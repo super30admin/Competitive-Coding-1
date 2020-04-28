@@ -1,0 +1,30 @@
+
+// Time Complexity : O(log n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Couldn't try
+// Brute force : Using Linear search
+// Using Binary search : Divide and conquer approach - elements appearing before the missing element will have arr[i] – i = 1
+ and those appearing after the missing element will have arr[i] – i = 2
+
+class Solution {
+func searchArray(_ arr: [Int], _ size: Int) -> Int{
+    if arr.count == 0 {
+        return -1
+    }
+    var start = 0
+    var end = size - 1
+    var mid : Int?
+    
+    while (end - start) > 1 {
+        mid = (start + end) / 2
+        if (arr[start] - start) != (arr[mid!] - mid!){
+            end = mid!
+        } else if (arr[end] - end) != (arr[mid!] - mid!){
+            start = mid!
+        }
+    }
+    return (arr[mid!] + 1)
+}
+}
+var output = Solution()
+output.searchArray([1, 2, 3, 5, 6, 7, 8], 7)
