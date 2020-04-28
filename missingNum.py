@@ -1,4 +1,4 @@
-#Time Comlexity:   O(1)
+#Time Comlexity:   O(n)
 #Space Complexity: O(1)
 #Ran succeefully on leetcode: Yes
 # Here I am finding the sum of the elements in the given array. And  also the sum of the number in the range of the length of the given array.
