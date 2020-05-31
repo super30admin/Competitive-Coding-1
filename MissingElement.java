@@ -10,8 +10,7 @@ class Solution {
     public int missingNumber(int[] nums) {
 
 		if(nums.length>0) {
-			int size=nums.length;
-			int sum = size*(size+1)/2;
+			int sum = nums.length*((nums.length)+1)/2;
 			
 			for(int number:nums) {
 				sum-=number;
