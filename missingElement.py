@@ -5,7 +5,7 @@
 
 # Your code here along with comments explaining your approach
 class Solution(object):
-    # check if middle element  is 1 greater than left neighbor and
+    # check if middle element is 1 greater than left neighbor and
     # 1 lesser than right neighbour, if not return the missing element
     # else based on index and element check if missing element is
     # in left or right part of array and move pointers accordingly
@@ -27,5 +27,4 @@ class Solution(object):
 
 
 arr = [1,3,4,5,6,7]
-s = Solution()
-print(s.missingElement(arr))
+print(Solution().missingElement(arr))
