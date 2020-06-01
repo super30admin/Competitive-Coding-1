@@ -1,6 +1,10 @@
+// Time Complexity :O(n) if array is unsorted and O(log n) if sorted. n is the array size;
+// Space Complexity : O(1) since the input elements of the array are constant;
+// Did this code successfully run on Leetcode : Yes, I have covered basic edge cases
+// Any problem you faced while coding this : No
 
-//
 
+// Your code here along with comments explaining your approach
 public class MissingNumber {
 
     public static void main(String []args){
@@ -14,6 +18,10 @@ public class MissingNumber {
     {
        int high = nums.length-1;
        int low = 0;
+       if(nums.length==0 || nums==null)
+       {
+           return 0;
+       }
        //checking if list is sorted
        if(nums[low]<=nums[high] && nums[low]>0)
        {
