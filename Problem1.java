@@ -1,3 +1,8 @@
+// Time Complexity : O(logn)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : No
+// Any problem you faced while coding this :
+
 /**
  * https://leetcode.com/problems/missing-number/
  * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
