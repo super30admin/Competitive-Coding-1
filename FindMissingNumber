@@ -1,0 +1,42 @@
+// Time Complexity: O(logn) : n-> length of nums array
+// Space Complexity: O(1)
+
+public class FindMissingNumber {
+
+    public static int findMissingNum(int[] nums){
+
+        if(nums == null || nums.length == 0) return -1;
+
+        int low = 0;
+        int high = nums.length - 1;
+
+        while(high - low >= 2){
+            int mid = low + (high - low)/2;
+
+            int midIndexDifference = nums[mid] - mid;
+            int lowIndexDifference = nums[low] - low;
+            int highIndexDifference = nums[high] - high;
+
+            if(midIndexDifference != lowIndexDifference){
+                high = mid;
+            }
+            else {
+                low = mid;
+            }
+
+
+        }
+
+        return (nums[low] + nums[high])/2;
+
+
+
+
+    }
+
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,3,4,5,6,8};
+        System.out.println(findMissingNum(nums));
+    }
+}
