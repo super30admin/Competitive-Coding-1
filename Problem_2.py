@@ -76,3 +76,10 @@ print("getMin",minh.getMin())
 print("extractMin",minh.extractMin())
 print('display')
 minh.display()
+
+'''time complexity - inserting - O(n)
+				   - display - O(1)
+				   - getMin - O(1)
+				   - extractmin - delete - O(logn)'''
+
+#space complexity - O(1)
