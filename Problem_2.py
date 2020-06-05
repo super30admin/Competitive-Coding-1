@@ -77,7 +77,7 @@ print("extractMin",minh.extractMin())
 print('display')
 minh.display()
 
-'''time complexity - inserting - O(n)
+'''time complexity - inserting - O(logn)
 				   - display - O(1)
 				   - getMin - O(1)
 				   - extractmin - delete - O(logn)'''
