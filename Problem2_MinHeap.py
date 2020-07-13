@@ -1,3 +1,17 @@
+# APPROACH:1 
+# Time Complexity : O(lg n) - insert(), heapify(), extractMin(), n is the length of heap. O(1) - getMin(), getMinChild_pos()
+# Space Complexity : O(n) - n is the length of the heap list
+# Did this code successfully run on Leetcode : Problem isn't there on Leetcode
+# Any problem you faced while coding this : None
+
+# Your code here along with comments explaining your approach
+# 1. Create a list for heap. - Initialisation
+# 2. Insert - append the value to end of list and go all the way up till the parent is less than child. - If not swap them
+# 3. getMin - returns the minimum element which is the root of heap - heap[1]
+# 4. getMinChild_pos - returns the index of the minimum child of a node. used in heapify()
+# 5. heapify - go till the end of heap. fo each node check if it's minimum child is greater than parent or not. If not then swap it with parent. -> maintains Min Heap property
+# 6. extractMin - swaps the root with the last value of the heap and pops the last element. Then call heapify()
+
 class MinHeap:
 
     def __init__(self):
@@ -31,9 +45,10 @@ class MinHeap:
             ind = min_child
 
     def extractMin(self):
-        self.heap[1] = self.heap[-1]
-        self.heap.pop(-1)
-        self.heapify(1)
+        if len(self.heap) > 1:
+            self.heap[1] = self.heap[-1]
+            self.heap.pop(-1)
+            self.heapify(1)
 
 
 # my_heap = MinHeap()
