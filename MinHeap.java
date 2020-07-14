@@ -52,7 +52,7 @@ public class MinHeap {
 		}
 	}
 
-	// helper function to move element up if its larger
+	// helper function to move element down if its larger
 	private void perculateDown(int parent) {
 		int left = (2 * parent) + 1;
 		int right = left + 1;
