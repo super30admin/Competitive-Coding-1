@@ -46,7 +46,7 @@ class Solution:
             
         
 # APPROACH:3 OPTIMAL SOLUTION
-# Time Complexity : O(lg n) - n is the length of the sorted array (here I have sorted it as input is unsorted in leetcode)
+# Time Complexity : O(n lg n) actually.   O(lg n) - n is the length of the sorted array (here I have sorted it as input is unsorted in leetcode)
 # Space Complexity : O(1) 
 # Did this code successfully run on Leetcode : Yes (need to sort the input)
 # Any problem you faced while coding this : None
@@ -54,8 +54,8 @@ class Solution:
 # Your code here along with comments explaining your approach
 # 1. Initialize start to 0 and end to len(nums) - 1. Compute mid
 # 2. If mid (index) not same as nums[mid] (array value) -> check its difference with it's left neighbor -> If 2, then found the missing element - nums[mid] - 1
-                                                                                                        -> We have overshot the missing elment, need to go to the part before 
-                                                                                                        this element (left side of it)
+#                                                                                                        -> We have overshot the missing elment, need to go to the part before 
+#                                                                                                        this element (left side of it)
 # 3. If mid (index) not same as nums[mid] (array value) -> need to go right of it as all elements before this element are present as ind == arr[ind]
 
 
