@@ -1,3 +1,14 @@
+'''
+TIME COMPLEXITY:
+    getMin() : O(1)
+    extractMin() : O(log(n))
+    insert() : O(log(n))
+SPACE COMPLEXITY: O(n)
+
+- for extractMin, we will swap first element with the last element, remove the last element, and heapify the heap
+- for insert operation, we will add the element to the end of the tree and then compare with the parent, if it is smaller, we will swap them until parent is smaller than child
+'''
+
 class minHeap:
     def __init__(self):
         self.heap=[]
@@ -7,11 +18,26 @@ class minHeap:
             return self.heap[0]
     
     def extractMin(self):
-        for i in range(1, len(self.heap)):
-            self.heap[i-1]= self.heap[i]
-        self.heap.pop()
         
+        self.heap[0]=self.heap.pop()
+        
+        i= 0
+        l=2*i+1
+        r= 2*i+2
+        n=len(self.heap)-1
+        while (r<=n and l<=n) and (self.heap[l] < self.heap[i] or self.heap[r] < self.heap[i]):
+            
+            l=2*i+1
+            r= 2*i+2
+            if self.heap[l]< self.heap[i]:
+                smallest=l
+            
+            if self.heap[r]< self.heap[i]:
+                smallest=r
 
+            if smallest != i:
+                self.heap[smallest], self.heap[i] = self.heap[i], self.heap[smallest]
+                i=smallest 
 
     def insert(self, data):
         self.heap.append(data)
@@ -36,9 +62,9 @@ print(obj.insert(100))
 print(obj.insert(30))
 print(obj.insert(7))
 # print(obj.getMin())
-# obj.extractMin()
+obj.extractMin()
 
-print(obj.insert(50))
+# print(obj.insert(50))
 obj.printHeap()
 
 
