@@ -13,7 +13,6 @@ class Main {
    {
        int l=0;
        int r=nums.length-1;
-       int r_diff = nums[r]-r;   //if there is a missing element in between this difference wont be one.
        while(l<=r)
        {
            int mid = l+(r-l)/2;
@@ -24,7 +23,7 @@ class Main {
        return -1;
    }
    public static void main(String[] args) {
-       int[] nums=new int[]{1,3,4,5,6,7};
+       int[] nums=new int[]{1,2,3,4,5,7};
        Main obj = new Main();
        System.out.println("missing element="+obj.findMissing(nums));
    }
