@@ -82,3 +82,29 @@ class Solution:
         return len(nums)
             
         
+# ANOTHER WAY OF IMPLEMENTING
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        
+        if nums is None:
+            return None
+        
+        nums.sort()
+        if nums[0] != 0:
+            return 0
+        
+        start, end = 0, len(nums) - 1
+        while start <= end:
+            mid = start + (end - start) // 2
+            
+            if nums[mid] > mid:
+                if nums[mid - 1] == mid - 1:
+                    return mid
+                else:
+                    end = mid - 1
+                    
+            elif nums[mid] == mid:
+                start = mid + 1
+                
+        return len(nums)
+        
