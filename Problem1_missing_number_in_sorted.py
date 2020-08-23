@@ -98,7 +98,7 @@ class Solution:
             mid = start + (end - start) // 2
             
             if nums[mid] > mid:
-                if nums[mid - 1] == mid - 1:
+                if mid == 0 or nums[mid - 1] == mid - 1:
                     return mid
                 else:
                     end = mid - 1
