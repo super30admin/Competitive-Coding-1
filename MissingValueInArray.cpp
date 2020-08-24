@@ -1,3 +1,11 @@
+// Time Complexity : O(logn)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode : No link provided
+// Any problem you faced while coding this : No
+
+
+
+
 /*Provide an array of n-1 integers in the range of 1 to n with no duplicates in list, One of the integers is missing in the list. Write a code to find the missing integer.
 
 Examples:
