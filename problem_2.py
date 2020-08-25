@@ -1,17 +1,26 @@
+# Space : O(N)
+
 class MinHeap:
     def __init__(self):
         self.heap = []
     
+    # runtime : O(1)
     def getMin(self):
         if len(self.heap):
             print('Min -> ', self.heap[0])
             return self.heap[0]
     
+    #Runtime : O(1)
     def extractMin(self):
         if len(self.heap):
             self.heap.pop(0)
             print("Post extraction -> ", self.heap)
     
+    # Runtime : O(longN)
+    # Since the array is sorted
+    # we perform a binary search to
+    # find a suitable position where 
+    # the new element can be inserted. 
     def insert(self, element):
         if not self.heap:
             self.heap.append(element)
