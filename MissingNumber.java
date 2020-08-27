@@ -11,7 +11,7 @@
 //2 Check if the set contains the elements from 1 to n.
 //3 If it doesn't contain then return that element;
 
-class Main {
+class MissingNumber {
     public int missingNumber(int[] arr) {
         // Hashset approach
         // Set<Integer> set = new HashSet<>();
@@ -46,7 +46,7 @@ class Main {
     }
 
     public static void main(String arg[]) {
-        Main obj = new Main();
+        MissingNumber obj = new MissingNumber();
         int arr[] = { 3, 4, 6, 7 };
         int miss = obj.missingNumber(arr);
         System.out.println("Missing number is = " + miss);
