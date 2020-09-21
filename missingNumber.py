@@ -1,3 +1,6 @@
+Time Complexity: O(logN)
+Space Complexity: O(1)
+
 def missing_number(nums):
     l , r= 0, len(nums)-1
     while(l<=r):
