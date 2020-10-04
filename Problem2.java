@@ -1,5 +1,18 @@
 
-package Amazon;
+    /*  Explanation
+    # Leetcode problem link : Not available on leetcode
+    Time Complexity for operators : o(log(n)) 
+    Extra Space Complexity for operators : o(1) .. No extra space
+    Did this code successfully run on Leetcode : Not available on leetcode
+    Any problem you faced while coding this : No
+# Your code here along with comments explaining your approach
+        # Basic approach : 
+        # Optimized approach: The main idea of this problem is to have unique hash values for each string which can be calculated by taking a product of prime numbers assigned to each character in a dictionary
+            # 1. Calculate middle index and do heapify from that element to the start element.
+	      2. Do this recursively so that is can solve subtree gets affected due to swapping.
+	      3. In heapify check which side of the element is greater and then swap that with the root node.
+	      4. Once we are done with the heapify, just print the array.
+    */
 
 public class maxHeap {
 
