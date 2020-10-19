@@ -1,9 +1,9 @@
 
-# Time Complexity: O(n)
+# Time Complexity: O(log n)
 # Space Complexity: O(1) - in-place
 
 # Approcah: 
-# Diveid the array into two zones:
+# Divide the array into two zones:
 #     - Left zone - no missing numbers (1+mid = ar[mid])
 #     - Right zone - 1 missing number
 #     - Binary search for the boundary between the tow zones
