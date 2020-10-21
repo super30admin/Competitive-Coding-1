@@ -1,5 +1,3 @@
-# Python3 implementation of Min Heap
-
 import sys
 
 class MinHeap:
@@ -11,18 +9,15 @@ class MinHeap:
 		self.Heap[0] = -1 * sys.maxsize
 		self.FRONT = 1
 
-	# Function to return the position of
-	# parent
+	
 	def parent(self, pos):
 		return pos//2
 
-	# Function to return the position of
-	# the left child
+
 	def leftChild(self, pos):
 		return 2 * pos
 
-	# Function to return the position of
-	# the right child
+
 	def rightChild(self, pos):
 		return (2 * pos) + 1
 
@@ -67,7 +62,7 @@ class MinHeap:
 			self.swap(current, self.parent(current))
 			current = self.parent(current)
 
-	
+
 	# Function to build the min heap using
 	# the minHeapify function
 	def minHeap(self):
