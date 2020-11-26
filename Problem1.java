@@ -1,4 +1,8 @@
-/*package whatever //do not write package name here */
+/*package whatever //do not write package name here *
+Time complexity : O(log n)
+Space Complexity : O(n)
+
+*/
 
 import java.io.*; 
   
