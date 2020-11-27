@@ -11,15 +11,15 @@ class MinHeap{
     }
 
     private int parent(int index){
-        return (index-i)/2;
+        return (index)/2;
     }
 
     private int leftChild(int index){
-        return 2*index+1;
+        return 2*index;
     }
 
     private int rightChild(int index){
-        return 2*index+2;
+        return 2*index+1;
     }
 
     private boolean isEmpty(){
@@ -34,8 +34,8 @@ class MinHeap{
      int min = -1;
      if(!isEmpty()){
        min = heap[0];
-       heap[0] = heap[size];
        size--;
+       heap[0] = heap[size];
        sinkDown(0);
      }
       return min; 
@@ -46,17 +46,17 @@ class MinHeap{
           System.out.println("MAXIMUM SIZE REACHED");
           return;
       }
-      this.size++;
       heap[size] = value;
       bubbleUp();
+      this.size++;
     }
 
     private void sinkDown(int index){
         int smallest = index;
-        if(size>=2*index+1 && heap[smallest] > heap[leftChild(index)]){
+        if(size>=2*index && heap[smallest] > heap[leftChild(index)]){
            smallest = leftChild(index);
         }
-        if(size>=2*index+2 && heap[smallest] > heap[rightChild(index)]){
+        if(size>=2*index+1 && heap[smallest] > heap[rightChild(index)]){
            smallest = rightChild(index);
         }
         if(smallest != index){
@@ -79,5 +79,23 @@ class MinHeap{
         heap[idx1] = heap[idx2];
         heap[idx2] = temp;
     }
+
+     public static void main(String[] arg) 
+    { 
+        System.out.println("The Min Heap is "); 
+        MinHeap minHeap = new MinHeap(15); 
+        minHeap.insert(5); 
+        minHeap.insert(3); 
+        minHeap.insert(17); 
+        minHeap.insert(10); 
+        minHeap.insert(84); 
+        minHeap.insert(19); 
+        minHeap.insert(6); 
+        minHeap.insert(22); 
+        minHeap.insert(9);  
+        System.out.println("The Min val is " + minHeap.getMin()); 
+        System.out.println("The Min val is " + minHeap.extractMin()); 
+        System.out.println("The Min val is " + minHeap.getMin()); 
+    } 
 
 }
