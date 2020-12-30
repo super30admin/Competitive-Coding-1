@@ -7,6 +7,8 @@
 // Input : arr[] = [1, 2, 4, 5, 6, 7, 8, 9]
 // Output : 3
 
+//TC - log n
+// SC - O(1)
 
 public class Main {
     public static void main(String[] args) {
