@@ -2,7 +2,7 @@
 // Space Complexity: O(1) - no extra space is required
 
 class Solution{
-  public int getFirstMissingNumber(nt[] arr)
+  public int getFirstMissingNumber(int[] arr)
   {
     if ( arr == null || arr.length == 0 )
        return -1;
@@ -23,7 +23,7 @@ class Solution{
        }
     }
    
-    return (nums[low] + nums[high])/2;
+    return (arr[low] + arr[high])/2;
   }
 }
 
