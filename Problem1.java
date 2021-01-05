@@ -13,7 +13,8 @@ Output : 3
 */
 
 public class Problem1 {
-
+//Time complexity : O(logn)
+//Space complexity : O(1)
     public static int search(int arr[]) {
         if (arr == null || arr.length == 0) {
             return -1;
