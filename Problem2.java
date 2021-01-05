@@ -148,3 +148,6 @@ public class MinHeap {
 	} 
 } 
 
+
+//Time complexity : getMin() take O(1) and extractMin, insert, delete takes(O(logN))
+//Space complexity : O(N) where N is the number of elements in a min heap
