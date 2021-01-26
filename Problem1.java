@@ -7,6 +7,8 @@
  Finally just return the (element +1) at the end pointer. However, there could be a case when 1 is missing(if interviewer says that).Then initialize startNum with 1. Here end pointer is going to give -1, just return 1 if end pointer returns -1. 
 */
 
+//Note: This problem can be solved using kth missing number also, but for kth missing number should start from 1 only. Below code is scallable only for 1st missing number but here start can be any number 
+
 class Solution15
 {
 	public static void main(String[] args) {
