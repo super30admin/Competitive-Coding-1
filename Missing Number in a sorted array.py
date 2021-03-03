@@ -18,4 +18,3 @@ def findMissingElement(nums):
 
 nums = [1,2,3,4,6]
 print("Missing number:", findMissingElement(nums))
-
