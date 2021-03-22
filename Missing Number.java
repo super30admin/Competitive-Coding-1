@@ -1,4 +1,3 @@
-
 class MissingNumber {
     public static void main(String[] args) {
         int ar[] = { 1, 2, 3, 4, 5, 6, 8 };
@@ -12,8 +11,11 @@ class MissingNumber {
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
+            // Check current mid element and the previous elemnet with mid value
             if (ar[mid] != mid + 1 && ar[mid - 1] == mid)
                 return mid + 1;
+            // If the middle element is not equal to midindex+1 we know the missing element
+            // is in the left side
             if (ar[mid] != mid + 1) {
                 high = mid - 1;
             } else
