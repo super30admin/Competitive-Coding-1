@@ -15,6 +15,8 @@ class Min_Heap:
     # return the root and heapfiy the array
     # time complexity - O(log n)
     def extractMin(self):
+        if(self.currentSize==0):
+            return -1
         root_value = self.heapList[1]
         self.heapList[1] = self.heapList[self.currentSize]
         self.currentSize -= 1
@@ -52,8 +54,9 @@ class Min_Heap:
     #returns the minimimum element i.e element at 1st index
     #time complexity - constant time
     def getMin(self):
-        return self.heapList[1]
-
+        if(self.currentSize != 0):
+            return self.heapList[1]
+        return -1
 
     def buildHeap(self, aList):
         self.currentSize = len(aList)
@@ -66,16 +69,16 @@ class Min_Heap:
     # printing a heap after building it
     def printheap(self):
         [print(i, end=" ") for i in self.heapList[1:]]
+        print()
 
 import random
-mylist= [random.randrange(0,10)%20 for x in range(10)]
+mylist= [random.randrange(0,10)%10 for x in range(10)]
 print (mylist)
 myheap=Min_Heap()
 myheap.buildHeap(mylist)
 myheap.printheap()
-myheap.extractMin()
-myheap.extractMin()
-myheap.extractMin()
-myheap.extractMin()
-print("\nafter removing")
+print("min value " + str(myheap.getMin()), end="\n" )
+for i in range(4):
+    print("delete " + str(myheap.extractMin()))
+
 myheap.printheap()
