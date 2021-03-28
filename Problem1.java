@@ -1,3 +1,12 @@
+/*
+The benefit of using a min heap to retrieve the minimum element at O(1) time complexity.
+
+However when we remove the min element or insert a new element to this heap, it will be of O(log(n)) complexity for the heapify operation. 
+The heapify will make the min heap stable after removing or add a element.
+
+Space complexity - O(n) where n is the size of the min heap.
+*/
+
 public class minheap {
     int size;
     private static final int FRONT = 1;
