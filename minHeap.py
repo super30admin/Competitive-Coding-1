@@ -1,6 +1,6 @@
 """
 Intuition: Heap is a complete binary tree.
-A min heap is a data structure which returns a minimum in O(1) time.
+A min heap is a data structure which returns a minimum element in O(1) time.
 
 #####################################################################
 Insert Method: Add a value to the end, and then uses heaptifyUp()
