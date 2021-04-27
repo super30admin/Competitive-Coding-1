@@ -1,3 +1,26 @@
+"""
+Intuition: Heap is a complete binary tree.
+A min heap is a data structure which returns a minimum in O(1) time.
+
+#####################################################################
+Insert Method: Add a value to the end, and then uses heaptifyUp()
+Time Complexity : O(log N) where N = total number of elements
+Space Complexity : O(1)
+#####################################################################
+Remove Method: Swaps the element to be removed, with the last element and then heapifyDown()
+Delete Complexity : O(log n)
+Space Complexity : O(1)
+#####################################################################
+getMin Method: MinValue of the element present at the top will be accessed
+Time Complexity : O(1)
+Space Complexity : O(1)
+#####################################################################
+getParentIndex Method:Computes the index of parent 
+Time Complexity : O(1)
+Space Complexity : O(1)
+#####################################################################
+"""
+
 class Heap:
 
 	def __init__(self):

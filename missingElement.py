@@ -1,6 +1,13 @@
+"""
+Intuition:  Use binary search to reduce the search space.
+If the value at index == mid + 1, this means elements to the left of it are ordered correctly.
 
+#####################################################################
+Time Complexity : O(log N) where N = number of elements
+Space Complexity : O(1) 
+#####################################################################
 
-
+"""
 def getMissingElement(array):
 
     low = 0 
