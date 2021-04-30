@@ -1,8 +1,8 @@
 # Time Complexity: 1. Insert() --> O(logN) [since after inserting, we need to heapify down the tree] 
 #                  2. Remove() --> O(logN) [since after removing, we need to heapify up the tree]
 #                  3. getMin() --> O(1) [accessing the top element in complete binary tree/ accessing the first element in array representation takes constant time]
-
-
+# 
+# Space Complexity: 1. O(N) --> size of array to represent the min heap 
 
 import sys
 
