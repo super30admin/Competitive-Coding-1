@@ -1,3 +1,5 @@
+#   Time Complexity: O(logN) --> Since every time we are reducing half the search space. 
+#   Space Complexity: O(1) --> Constant space, as we are not using any extra space and searching by pointers
 
 def findMissingNum(arr):
     low = 0 
