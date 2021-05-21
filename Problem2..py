@@ -23,7 +23,6 @@ class Solution:
     def delete(self):
         self.heap.pop(0)
         self.size -= 1
-        print(self.heap)
 
         self.down_heapify()
         print(self.heap)
@@ -46,7 +45,8 @@ class Solution:
             pass
 
         self.heap.insert(0, self.heap[-1])
-        self.heap.pop()
+        self.heap.pop(-1)
+
         i = 0
 
         while 2*i < self.size:
@@ -54,16 +54,18 @@ class Solution:
                 temp = self.heap[i]
                 self.heap[i] = self.heap[2 * i + 1]
                 self.heap[2 * i + 1] = temp
+                i = 2 * i + 1
             elif self.heap[i] > self.heap[2 * i + 2]:
                 temp = self.heap[i]
                 self.heap[i] = self.heap[2 * i + 2]
                 self.heap[2 * i + 2] = temp
+                i = 2 * i + 2
+
+    def heapSize(self):
+        return self.size
 
     def isEmpty(self):
         return len(self.heap) == 0
-
-    def size(self):
-        return self.size
 
     def findMin(self):
         return self.heap[0]
@@ -72,6 +74,7 @@ class Solution:
 obj = Solution()
 # 5,3,17,10,54
 # 5,6,7,9,13,11,10
+print("Insertion")
 obj.insert(5)
 obj.insert(6)
 obj.insert(7)
@@ -79,5 +82,11 @@ obj.insert(9)
 obj.insert(13)
 obj.insert(11)
 obj.insert(10)
-
+print("Deletion")
 obj.delete()
+print("Size")
+print(obj.heapSize())
+print("Empty heap or not")
+print(obj.isEmpty())
+print("Minimum Value")
+print(obj.findMin())
