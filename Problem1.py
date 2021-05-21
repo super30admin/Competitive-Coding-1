@@ -8,7 +8,6 @@ Runtime Complexity: O(logn)
 Space Complexity: O(1)
 """
 
-
 def missingNumber(nums):
     low = 0
     high = len(nums)-1
