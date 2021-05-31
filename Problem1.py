@@ -6,9 +6,12 @@
 # using sum of n numbers and substracting the sum of the given numbers to get the missing one
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        a = sum(nums)
-        b = max(nums)
-        if b < len(nums):
-            return len(nums)
-        s = (b*(b+1))//2
-        return s - a
+        return self.binary(nums,0,len(nums)-1)
+        
+    def binary(self,arr,l,r):
+        if l > r:
+            return arr[l]-1
+        mid = (l+r)//2
+        if arr[mid] != mid+1:
+            return self.binary(arr,0,mid-1)
+        return self.binary(arr,mid+1,r)
