@@ -1,3 +1,8 @@
+/* TC   - mentioned in the meothods
+ * SC  - O(1) no auxiliary space used in any of the operations
+ * */
+
+
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
@@ -9,6 +14,7 @@ public class MinHeap {
 		 pq  = new PriorityQueue<Integer>();
 	}
 	public void insert(int elem) {
+		// TC - O(logN) since re-heapification takes logN time
 		pq.add(elem);
 	}
 	
@@ -21,12 +27,13 @@ public class MinHeap {
 	}
 	
 	public int pop() {
-		
+		// TC - O(logN) since re-heapification takes logN time
 		return pq.poll();
 	}
 	
 
 	public void removeByValue(int val) {
+		//TC - O(logN) since re-heapification takes logN time
 		pq.remove(val);
 		
 	}
