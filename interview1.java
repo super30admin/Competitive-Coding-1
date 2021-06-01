@@ -2,16 +2,16 @@ package leetcode;
 
 public class interview1 {
 
-    public static int search(int arr[]) {
+    public static int search(int[] arr) {
         int low = 0;
         int high = arr.length - 1;
         int mid=0;
 
-        while (low < high) {
+        while (low <= high) {
             mid = low + (high - low) / 2;
             if ((arr[high]-arr[low])==2) {
                 return arr[low] + 1;
-            } else if ((arr[mid] - arr[low]) > (arr[high] - arr[mid])) {
+            } else if ((arr[mid] - arr[low]) > mid-low) {
                 high = mid ;
             } else {
                 low = mid ;
@@ -21,7 +21,7 @@ public class interview1 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2,4, 5, 6,7,8};
+        int[] arr = {1,3,4,5,6,7};
         int miss = search(arr);
         System.out.println(miss);
     }
