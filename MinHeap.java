@@ -1,5 +1,5 @@
 // Time Complexity : O(log n)
-// Space Complexity : O(n)
+// Space Complexity : O(1)
 // Did this code successfully run on Leetcode : NA
 // Any problem you faced while coding this : no
 
