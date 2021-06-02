@@ -1,5 +1,5 @@
 // Time Complexity : O(log N)
-// Space Complexity : O(log N)
+// Space Complexity : O(1)
 // Did this code successfully run on Leetcode : NA
 // Any problem you faced while coding this : no
 
@@ -41,5 +41,4 @@ class MissingNumber {
     	System.out.println( binarySearch(arr,0,arr.length-1));
     }
 }
-
 
