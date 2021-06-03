@@ -83,10 +83,13 @@ public class Program2 {
     }
     public void print()
     {
+         System.out.println("size"+size);
         for (int i = 1; i <= size / 2; i++) {
-            System.out.print(" parent : " + heap[i]
-                    + " leftchild : " + heap[2 * i]
-                    + " rightchild :" + heap[2 * i + 1]);
+            System.out.print("Parent : " + heap[i]);
+            if (leftChild(i) <= size)
+                System.out.print(" Left : " + heap[leftChild(i)]);
+            if (rightChild(i) <= size)
+                System.out.print(" Right :" + heap[rightChild(i)]);
             System.out.println();
         }
     }
