@@ -24,3 +24,6 @@ s = Solution()
 print(s.answer([]))
 print(s.answer([2,3,4,5]))
 print(s.answer([1,2,4,5]))
+
+# TC: O(log N)
+# SC: O(1)
