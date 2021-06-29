@@ -10,3 +10,6 @@ Output:
 
 Note:
 All inputs will be sorted.
+
+## Problem 2
+Implement min heap. Include insert, getMin and extractMin operations.
