@@ -10,13 +10,8 @@ public class Problem2 {
         this.size = 0;
     }
 
-    public insert(int value) {
-        if (this.size <= this.maxSize) {
-            this.heap[this.size - 1] = val;
-            this.size++;
-        } else {
-            this.moveUp(value);
-        }
+    public int insert(int value) {
+        return value;
     }
 
 }
