@@ -40,3 +40,32 @@ class Search{
 }
  
 }
+
+*************** O(LOG N) ****************************************
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("Hello World");
+        
+        int[] arr= {1,2,3,5,6}; //6 elements// (7-1)elements
+        
+                      //    l   r
+                      //1,3,4,5,6 mid=2 
+        int mid=0;
+        int l=0, r=arr.length-1;
+        while(l<=r){
+            
+            mid= l+(r-l)/2;
+            
+            int curr= mid+1;
+            
+            if(curr==arr[mid]){
+                l=mid+1;
+            }
+            else r=mid-1;
+        
+        }
+        
+        System.out.println(mid+1);
+     }
+}
