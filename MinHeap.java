@@ -18,7 +18,16 @@ import java.util.*;
     Arr[(2 * i) + 2] returns its right child node.
 */
 
+/*
+Imp Steps before coding
 
+// Time Complexity : insertion: O(logN), getMin / remove: O(1). 
+// Space Complexity : O(N)
+// Did this code successfully run on Editor : Yes
+// Any problem you faced while coding this : Took help from gfg, understood and completed it
+
+
+*/
 
 
 
