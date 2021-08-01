@@ -1,10 +1,7 @@
 // Time Complexity = O(log N)
 // Space Complexity = O(1)
 // where N is the number of elements in the heap.
-#include <iostream>
-#include <cstdlib>
-#include <vector>
-#include <iterator>
+#include<bits/stdc++.h>
 using namespace std;
 
 class Heap
