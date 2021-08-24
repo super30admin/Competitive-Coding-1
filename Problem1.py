@@ -1,3 +1,9 @@
+# Time Complexity : O(logN) for binary search
+# Space Complexity : O(1) as no extra space
+# Did this code successfully run on Leetcode : I did not find this exact question on LC
+# Any problem you faced while coding this : It took some time to understand the logic of 
+# how to exactly apply binary search here
+
 def binsearch(arr) -> int:
     lo = 0
     hi = len(arr) - 1
