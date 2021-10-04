@@ -1,5 +1,5 @@
-# TC-O()
-# SC-O()
+# TC-O(logn)
+# SC-O(1)
 def missing(arr):
     if (arr[0] != 1):
         return 1
