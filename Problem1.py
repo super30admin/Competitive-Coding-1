@@ -1,3 +1,4 @@
+#Note : Only one question was asked during the mock intervew
 #Approach : Binary Search and check if the previous element value is matched correctly if not retrun prev value-1
 #Edge cases : length of the size is 2 and missing first element
 #Time Complexity : O(n)
