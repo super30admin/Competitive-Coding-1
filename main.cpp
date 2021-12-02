@@ -1,29 +1,69 @@
 #include <iostream>
 using namespace std;
-#include "vector"
-// Here the time complexity is O(logn) because fo binary search
-// The Space complexity is O(1)
+//Time complexity --> For Push--> O(n), For POP, PEEK --> O(1)
+// Space complexity --> O(n)
 
-int search(vector<int> v){
-    int low = 0;//0
-    int high = v.size()-1;//6
-    int mid = 0;//3
+class PriorityQue{
 
-
-    while(high-low >1){
-        mid = low + (high-low)/2;
-
-        if((v[low]- low) != (v[mid] - mid)){
-            high = mid;
-        }else if((v[mid] - mid) != (v[high] - high)){
-            low = mid;
+    class Node{
+    public:
+        int val;
+        int priority;
+        Node * next;
+        Node(int val,int priority){
+            this->val = val;
+            this->priority = priority;
+            this->next = NULL;
         }
+    };
+public :
+    Node * head = NULL;
+    void push(int val, int priority){
+        Node * current = head;
+        Node * temp = new Node(val,priority);
+        if(head == NULL){
+            head = temp;
+            return;
+        }
+        if(head->priority > temp->priority){
+            temp->next = current;
+            head = temp;
+            return;
+        }
+        while(current->next != NULL && current->next->priority < temp->priority){
+            current = current->next;
+        }
+        temp->next = current->next;
+        current->next = temp;
+        return;
     }
-    return (v[low] + v[high])/2;
-}
+    void pop(){
+        if(head == NULL){
+            return ;
+        }
+        Node * temp = head;
+        head = temp->next;
+        temp->next = NULL;
+    }
+    int peek(){
+        if(head == NULL){
+            return -1;
+        }
+        return head->val;
+    }
+};
 
-int main()
-{
-    vector<int> v { 1, 2, 3, 4, 5, 6, 8 };
-    cout << "Missing number:" << search(v);
+int main(){
+    PriorityQue pq;
+    pq.push(4,1);
+    pq.push(5,2);
+    pq.push(6,3);
+    pq.push(7,0);
+
+    while (pq.head != NULL)
+    {
+        cout << " " << pq.peek();
+        pq.pop();
+    }
+    return 0;
 }
