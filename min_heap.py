@@ -5,7 +5,7 @@ S.C: O(n)
 
 Intution: heap sort when the array is feaded as input initially; Return top element when getmin is called; 
 for extract min, exchange the first element with last element, pop and then heapify;
-for insert, append to the last, then switch with first element and then heapify;
+for insert, append to the last, then heapify from end;
 
 '''
 class MinHeap:
@@ -50,8 +50,9 @@ class MinHeap:
     def insert(self, val):
         self.arr.append(val)
         self.arr_len += 1
-        self.arr[0], self.arr[self.arr_len - 1] = self.arr[self.arr_len - 1], self.arr[0]
-        self.heapify(0)
+        for idx in range(self.arr_len - 1, -1, -1):
+            self.arr[idx], self.arr[0] = self.arr[0], self.arr[idx]
+            self.heapify(idx)
 
 
 arr = [4,3,12,5,1,14,12]
@@ -59,5 +60,6 @@ mh = MinHeap(arr)
 print(mh.arr)
 print(mh.getMin())
 print(mh.extractMin())
+print(mh.arr)
 print(mh.insert(10))
 print(mh.arr)
