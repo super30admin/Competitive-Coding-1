@@ -45,10 +45,6 @@ public class MyClass {
     obj.push(1,5);
     obj.push(1,1);
     System.out.println(obj.pop());
-    System.out.println(obj.pop());
-    System.out.println(obj.pop());
-    System.out.println(obj.pop());
-    System.out.println(obj.pop());
-    System.out.println(obj.pop());
+
     }
 }
