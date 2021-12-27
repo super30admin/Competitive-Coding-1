@@ -31,9 +31,9 @@ class MinHeap:
 
     def sort(self):
         for idx in range(self.arr_len//2, -1, -1):
-          self.heapify(self.arr, idx)
+            self.heapify(idx)
         
-        for idx in range(self.arr_len - 1, 0, -1):
+        for idx in range(self.arr_len - 1, -1, -1):
             self.arr[idx], self.arr[0] = self.arr[0], self.arr[idx]
             self.heapify(idx)
     
@@ -54,4 +54,10 @@ class MinHeap:
         self.heapify(0)
 
 
-        
+arr = [4,3,12,5,1,14,12]
+mh = MinHeap(arr)
+print(mh.arr)
+print(mh.getMin())
+print(mh.extractMin())
+print(mh.insert(10))
+print(mh.arr)
