@@ -11,7 +11,7 @@ class Heap:
         self.heapSize += 1
         currIdx = self.heapSize
         parentIdx = currIdx // 2
-        while parentIdx > 0 and self.storage[currIdx] > self.storage[parentIdx]:
+        while parentIdx > 0 and self.storage[currIdx] < self.storage[parentIdx]:
             self.swapElementsAt(currIdx, parentIdx)
             currIdx = parentIdx
             parentIdx = currIdx // 2
@@ -32,12 +32,12 @@ class Heap:
 
         while left <= self.heapSize or right <= self.heapSize:
             if right <= self.heapSize:
-                swapIdx = left if self.storage[left] > self.storage[right] else right
+                swapIdx = left if self.storage[left] < self.storage[right] else right
             
             else:
                 swapIdx = left
             
-            if self.storage[currIdx] >= self.storage[swapIdx]:
+            if self.storage[currIdx] <= self.storage[swapIdx]:
                 break
             else:
                 self.swapElementsAt(currIdx, swapIdx)
@@ -55,7 +55,7 @@ class Heap:
         else:
             return self.storage[1]
     
-    def heapSort(self, elements):
+    def heapSort(self, elements, reverse = False):
         
         if not elements:
             return elements
@@ -67,6 +67,9 @@ class Heap:
             deletedEle = self.delete()
             elements[self.heapSize] = deletedEle
         
+        if not reverse:
+            elements.reverse()
+
         self.cleanseHeap()
 
         
@@ -81,13 +84,6 @@ class Heap:
         self.storage = [None]
 
 heap = Heap()
-elements = [10,2,11,32,34,11,2,5,3]
-print("Input List: ", elements)
-heap.heapSort(elements)
-print("Output List: ", elements)
-print("-" * 50)
-
-
 heap.insert(10)
 heap.insert(23)
 heap.insert(3)
@@ -101,6 +97,23 @@ heap.displayHeap()
 print("Deleted Element", heap.delete())
 print("Deleted Element", heap.delete())
 print("Deleted Element", heap.delete())
+heap.cleanseHeap()
+print("-" * 50)
+
+elements = [10,2,11,32,34,11,2,5,3]
+print("Input List: ", elements)
+heap.heapSort(elements)
+print("Sorted Output List: ", elements)
+print("-" * 50)
+
+elements = [10,2,11,32,34,11,2,5,3]
+print("Input List: ", elements)
+heap.heapSort(elements, reverse=True)
+print("Reverse Sorted List: ", elements)
+print("-" * 50)
+
+
+
 
 
 
