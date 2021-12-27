@@ -83,20 +83,8 @@ class Heap:
         self.heapSize = 0
         self.storage = [None]
 
+
 heap = Heap()
-elements = [10,2,11,32,34,11,2,5,3]
-print("Input List: ", elements)
-heap.heapSort(elements)
-print("Sorted Output List: ", elements)
-print("-" * 50)
-
-elements = [10,2,11,32,34,11,2,5,3]
-print("Input List: ", elements)
-heap.heapSort(elements, reverse=True)
-print("Reverse Sorted List: ", elements)
-print("-" * 50)
-
-
 heap.insert(10)
 heap.insert(23)
 heap.insert(3)
@@ -110,6 +98,17 @@ heap.displayHeap()
 print("Deleted Element", heap.delete())
 print("Deleted Element", heap.delete())
 print("Deleted Element", heap.delete())
+heap.cleanseHeap()
+print("-" * 50)
 
+elements = [10,2,11,32,34,11,2,5,3]
+print("Input List: ", elements)
+heap.heapSort(elements)
+print("Sorted Output List: ", elements)
+print("-" * 50)
 
-
+elements = [10,2,11,32,34,11,2,5,3]
+print("Input List: ", elements)
+heap.heapSort(elements, reverse=True)
+print("Reverse Sorted List: ", elements)
+print("-" * 50)
