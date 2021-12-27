@@ -5,6 +5,34 @@ class Heap:
 
     def swapElementsAt(self, idx1, idx2):
         self.storage[idx1], self.storage[idx2] = self.storage[idx2], self.storage[idx1]
+    
+
+    def siftDown(self, currIdx):
+            left = currIdx * 2
+            right = currIdx * 2 + 1
+            while left <= self.heapSize or right <= self.heapSize:
+                if right <= self.heapSize:
+                    swapIdx = left if self.storage[left] > self.storage[right] else right
+                else:
+                    swapIdx = left
+                
+                if self.storage[currIdx] >= self.storage[swapIdx]:
+                    break
+                else:
+                    self.swapElementsAt(currIdx, swapIdx)
+                    currIdx = swapIdx
+                    left = swapIdx * 2 
+                    right = swapIdx * 2 + 1
+    
+    def displayHeap(self):
+        if self.heapSize == 0:
+            print("Heap is Empty!")
+            return
+        print(self.storage[1:self.heapSize + 1])
+
+    def cleanseHeap(self):
+        self.heapSize = 0
+        self.storage = [None]
 
     def insert(self, val):
         self.storage.append(val)
@@ -15,7 +43,7 @@ class Heap:
             self.swapElementsAt(currIdx, parentIdx)
             currIdx = parentIdx
             parentIdx = currIdx // 2
-
+    
     def delete(self):
         if self.heapSize == 0:
             print("Heap is empty!")
@@ -27,24 +55,7 @@ class Heap:
         self.storage[1] = placeHolderEle
         
         currIdx = 1
-        left = 2 * currIdx
-        right = 2 * currIdx + 1
-
-        while left <= self.heapSize or right <= self.heapSize:
-            if right <= self.heapSize:
-                swapIdx = left if self.storage[left] > self.storage[right] else right
-            
-            else:
-                swapIdx = left
-            
-            if self.storage[currIdx] >= self.storage[swapIdx]:
-                break
-            else:
-                self.swapElementsAt(currIdx, swapIdx)
-                currIdx = swapIdx
-                left = swapIdx * 2 
-                right = swapIdx * 2 + 1
-        
+        self.siftDown(currIdx)
         return deletedEle
 
     def getMin(self):
@@ -72,16 +83,16 @@ class Heap:
 
         self.cleanseHeap()
 
-        
-    def displayHeap(self):
-        if self.heapSize == 0:
-            print("Heap is Empty!")
-            return
-        print(self.storage[1:self.heapSize + 1])
-
-    def cleanseHeap(self):
-        self.heapSize = 0
-        self.storage = [None]
+    def heapify(self, elements):
+        self.cleanseHeap()
+        n = len(elements)
+        self.heapSize = n - 1
+        currIdx = n - 1
+        self.storage = elements
+        while currIdx > -1:
+            self.siftDown(currIdx)
+            
+            currIdx -= 1
 
 
 heap = Heap()
@@ -112,3 +123,15 @@ print("Input List: ", elements)
 heap.heapSort(elements, reverse=True)
 print("Reverse Sorted List: ", elements)
 print("-" * 50)
+
+
+print("-"*50)
+print("Heapify Test")
+newHeap = Heap()
+elements = [10,2,11,32,34,11,2,5,3]
+newHeap.heapify(elements)
+newHeap.displayHeap()
+print(newHeap.delete())
+print(newHeap.delete())
+print(newHeap.delete())
+print(newHeap.delete())
