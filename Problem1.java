@@ -1,29 +1,31 @@
-//Time complexity: O(N)
-//Space complexity: O(N)
+//Time complexity: O(logn)
+//Space complexity: O(1)
 
-class Solution {
-    public boolean wordPattern(String pattern, String s) {
-        HashMap<Character,String>m=new HashMap<Character,String>();
-        char[] c1= pattern.toCharArray();
-        String[] s1= s.split(" ");
-        if(c1.length!=s1.length)
-            return false;
-        for(int i=0;i<c1.length;i++)
-        {
-            if(m.containsKey(c1[i]))
-            {
-                if(!m.get(c1[i]).equals(s1[i]))
-                  return false;
-            }
-            else
-            {
-                if(m.containsValue(s1[i]))
-                    return false;
-                m.put(c1[i],s1[i]);
-                
-            }
-        }
-        
-        return true;
-    }
+import java.io.*;
+import java.util.*;
+class GFG {
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		Scanner scan=new Scanner(System.in);
+		int n= scan.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+		    arr[i]=scan.nextInt();
+		}
+		int left= 0; int right= n-1;
+		while(right-left>1)
+		{
+		    int mid=left+(right-left)/2;
+		    if(arr[left]-left==arr[mid]-mid)
+		    {
+		        left=mid;
+		    }
+		    else if(arr[right]-right==arr[mid]-mid)
+		    {
+		        right=mid;
+		    }
+		}
+		System.out.println(arr[left]+1);
+	}
 }
