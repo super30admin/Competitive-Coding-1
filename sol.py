@@ -1,3 +1,6 @@
+#Time Complexity O(Log n)
+#Time Complexity O(1) constant time
+
 a = [1,2,3,4,6,7]
 
 low = 0
