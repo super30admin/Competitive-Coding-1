@@ -4,6 +4,8 @@
 def findMissing(list1):
     low=0
     high=len(list1)-1
+    # permforming binary search to find the missing element
+    # to decide which direction to move we calculate value-index if its 1 we move right if greter than 1 we move left
     while(low<=high):
         mid=(low+high)//2
         if (list1[mid]-list1[mid-1])>1:
