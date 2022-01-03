@@ -1,5 +1,10 @@
 /*package whatever //do not write package name here */
 
+//Time Complexity: O(log N) (Ps. can you please explain me how the Time complexity is O(Log N) as i am little confused about it now
+//Space Complexity: O(1)
+//Issues Faced: Initially syntactical errors and in Geeks IDE, search method was not declared and i forgot to do it and got error
+//Did it run successfully on GeeksForGeeks: Yes
+
 import java.io.*;
 
 class GFG {
@@ -26,7 +31,7 @@ class GFG {
 
 }
     
-    
+
     
 	public static void main (String[] args) {
 	    
