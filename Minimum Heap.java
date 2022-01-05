@@ -60,7 +60,7 @@ class minHeap {
     private void minHeapify(int pos)
     {
 
-        // If the node is a non-leaf node and greatee than any of its child
+        // If the node is a non-leaf node and greater than any of its child
         if (!isLeaf(pos)) {
             if (Heap[pos] > Heap[leftChild(pos)]
                     || Heap[pos] > Heap[rightChild(pos)]) {
