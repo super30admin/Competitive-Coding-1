@@ -1,3 +1,10 @@
+// Time Complexity : O(logn)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
+// Your code here along with comments explaining your approach : find mid and check mid -start == mid_indx - start, if true search on second half else end = mid
+// if mid and neighbours have difference more than 1 then we get the missing number
+
 
 class Solution {
 
