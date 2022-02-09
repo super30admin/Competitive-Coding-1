@@ -1,0 +1,20 @@
+class Solution {
+    public static void main(String[] args) {
+        int arr[] = {1, 3, 4, 5, 6, 7, 8};
+        System.out.println(search(arr));
+    }
+
+    public static int search(int[] arr) {
+        int s=0;
+        int e = nums.length - 1;
+        while(s<=e){
+        int mid = s + (e-s)/2;
+        if(nums[s]-s != nums[mid]-mid){
+            e = mid;
+        }
+        else{
+            s = mid+1;
+        }
+    }
+        return nums[s]+1;
+}
