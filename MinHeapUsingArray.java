@@ -1,14 +1,16 @@
-import java.util.Arrays;
 
+// Time Complexity : Insertion : O(nlog n) else Heapify - O(m)
+// Space Complexity : O(n) - the items added; if not considered as the items then O(1) as we are not storing any copy other than added elements
+// Did this code successfully run on Leetcode : No; just ran on java editor.
+// Any problem you faced while coding this : Yes; dont know how to do it using array, so had to learn and submit.
+// My Notes : Raw implementation of MinHeap
 /**
  * Properties
  * 1. ACBT - balanced tree it should be be
  * 2. Left and then right child should be full
- * 
- * - Insetion in Heap tree
- * if 1 by 1 then O(nlog n) else Heapify - O(m)
- * 
  */
+
+import java.util.Arrays;
 
 class MinHeap {
 
@@ -138,7 +140,7 @@ class MinHeap {
                 // then the heap is proper
                 break;
             } else {
-                System.out.println(" Swapping : "+items[idx] +" & "+items[smallChildIdx] );
+                System.out.println(" Swapping : " + items[idx] + " & " + items[smallChildIdx]);
                 swap(idx, smallChildIdx);
             }
             idx = smallChildIdx;
@@ -175,7 +177,7 @@ class MinHeap {
         obj.add(5);
         obj.add(1);
         obj.printTree();
-        System.out.println(" Poll : " +obj.poll()); // Removing the min element which is 1
+        System.out.println(" Poll : " + obj.poll()); // Removing the min element which is 1
         System.out.println();
         obj.printTree();
 

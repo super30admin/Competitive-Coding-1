@@ -1,5 +1,13 @@
+// Time Complexity : O(n) to iterate the nums array and do computations
+// Space Complexity : O(1) using constant variables
+// Did this code successfully run on Leetcode : Yes;(https://leetcode.com/submissions/detail/643761837/)
+// Any problem you faced while coding this : 
+// My Notes : Approach 1: // The idea is to XOR all the numbers, exisiting numbers become zero, the remaining number is the one which is missing
+
+
 class Solution {
     
+    // Approach 1: using XOR
     public int missingNumber(int[] nums) {
         // The idea is to XOR all the numbers, exisiting numbers become zero, the remaining number is the one which is missing
         int result = nums.length; 
@@ -9,6 +17,7 @@ class Solution {
         return result;
     }
     
+    // Approach 2 : Sum method
     public int missingNumberSumMethod(int[] nums) {
         int sum_arr = 0, sum_actual=0; 
         for(int i=0;i<nums.length;i++){
@@ -19,6 +28,7 @@ class Solution {
         return Math.abs(sum_actual-sum_arr);
     }
     
+    // Approach 3 : BruteForce method
     public int missingNumberBF(int[] nums) {
         // Range of arr 0-nums.length
         boolean isLastElemPresent = false;
