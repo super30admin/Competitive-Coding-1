@@ -22,41 +22,24 @@ class MinHeap {
     private int size = 0;
     int[] items = new int[capacity];
 
-    private int getLeftChildIndex(int parentIdx) {
-        return 2 * parentIdx + 1;
-    }
+    // Helper functions below 
+    private int getLeftChildIndex(int parentIdx) { return 2 * parentIdx + 1; }
 
-    private int getRightChildIndex(int parentIdx) {
-        return 2 * parentIdx + 2;
-    }
+    private int getRightChildIndex(int parentIdx) { return 2 * parentIdx + 2; }
 
-    private int getParentIndex(int childIdx) {
-        return (childIdx - 1) / 2;
-    }
+    private int getParentIndex(int childIdx) { return (childIdx - 1) / 2; }
 
-    private boolean hasLeftChild(int index) {
-        return getLeftChildIndex(index) < size;
-    }
+    private boolean hasLeftChild(int index) { return getLeftChildIndex(index) < size; }
 
-    private boolean hasRightChild(int index) {
-        return getRightChildIndex(index) < size;
-    }
+    private boolean hasRightChild(int index) { return getRightChildIndex(index) < size; }
 
-    private boolean hasParent(int index) {
-        return getParentIndex(index) >= 0;
-    }
+    private boolean hasParent(int index) { return getParentIndex(index) >= 0; }
 
-    private int leftChild(int idx) {
-        return items[getLeftChildIndex(idx)];
-    }
+    private int leftChild(int idx) { return items[getLeftChildIndex(idx)]; }
 
-    private int rightChild(int idx) {
-        return items[getRightChildIndex(idx)];
-    }
+    private int rightChild(int idx) { return items[getRightChildIndex(idx)]; }
 
-    private int parent(int idx) {
-        return items[getParentIndex(idx)];
-    }
+    private int parent(int idx) { return items[getParentIndex(idx)]; }
 
     private void swap(int i, int j) {
         // THIS WAS ASKED IN ONE INTERVIEW
