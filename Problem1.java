@@ -1,5 +1,6 @@
 /*package whatever //do not write package name here */
-
+//Time Complexity = O(log(n))
+//Space Complexity = O(1)
 import java.io.*;
 
 class GFG {
