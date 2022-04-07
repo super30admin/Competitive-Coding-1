@@ -1,3 +1,10 @@
+/**
+ * Time Complexity: O(log(N)) where n is number of numbers in array. Sorting Time not considered here
+ * Space Complexity: O(1)
+ * Ran on Leetcode : Yes
+ * Approach: Sort the array and do a binary search moving to element where mid and number doesn't match
+ */
+
 import java.util.Arrays;
 
 class Problem1 {
