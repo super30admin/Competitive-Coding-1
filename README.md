@@ -31,6 +31,7 @@ Example of Min Heap:
 
 
     20                     32    45    95    40
+    
 Source Link: https://www.geeksforgeeks.org/min-heap-in-java/
 
 ## Problem 2: Missing Element in a Sorted Array
@@ -52,4 +53,5 @@ Input : arr[] = [1, 2, 4, 5, 6, 7, 8, 9]
 
 Output : 3
 Source Link: https://www.geeksforgeeks.org/find-the-missing-number-in-a-sorted-array/
+
 Leet Code: https://leetcode.com/problems/missing-element-in-sorted-array/
