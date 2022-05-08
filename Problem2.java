@@ -26,4 +26,4 @@ class missingNumberInSortedArray{
 }
 
 
-//this problem has O(n) time complexity and O(1) space complexity
+//this problem has O(logn) time complexity and O(1) space complexity
