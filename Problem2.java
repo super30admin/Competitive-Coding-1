@@ -8,8 +8,8 @@ For getMin and getLength : O(1)
 
 */
 // Space Complexity : O(N)
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+// Did this code successfully run on Leetcode : NA
+// Any problem you faced while coding this : Having problem minHeapify() when deleting min from heap but now it's fixed.
 
 
 // Your code here along with comments explaining your approach
