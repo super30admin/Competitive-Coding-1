@@ -1,3 +1,5 @@
+//Problem Statement: Implement Minimum Heap
+
 // Time Complexity : O(logn) 
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Question isn't available on leetcode, ran on IDE
@@ -29,8 +31,8 @@ public class Problem2 {
 	swim(N); // Restore heap property.
 	}
 	
-	public int delMax(){
-	int max = pq[1]; // Retrieve max key from top.
+	public int delMin(){
+	int max = pq[1]; // Retrieve min key from top.
 	exch(1, N--); // Exchange with last item.
 	pq[N+1] = -1; 
 	sink(1); // Restore heap property.
@@ -41,14 +43,14 @@ public class Problem2 {
 		int temp = pq[i]; pq[i] = pq[j]; pq[j] = temp;
 	}
 	
-	private void swim(int k) {
+	private void swim(int k) { //bubble up
 		while (k > 1 && (pq[k/2]>pq[k])){
 		exch(k/2, k);
 		k = k/2;
 		}
 	}
 	
-	private void sink(int k) {
+	private void sink(int k) {  //bubble down
 		while (2*k <= N){
 		int j = 2*k;
 		if (j < N && pq[j]>pq[j+1]) j++;
@@ -73,13 +75,13 @@ public class Problem2 {
 		mh.insert(10);
 		mh.insert(11);
 		mh.insert(13);
-		//mh.delMax();
-		//mh.delMax();
+		//mh.delMin();
+		//mh.delMin();
 		mh.insert(9);
 		mh.insert(2);
 		mh.insert(1);
 		mh.insert(20);
-		//System.out.println(mh.delMax());
+		//System.out.println(mh.delMin());
 		
 		mh.print();
 	}
