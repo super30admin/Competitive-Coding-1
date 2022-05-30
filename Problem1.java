@@ -1,3 +1,5 @@
+//Problem Statement: Find the missing element in a sorted array that beings from 1
+
 // Time Complexity : O(logn) 
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Question isn't available on leetcode, ran on geeks for geeks
