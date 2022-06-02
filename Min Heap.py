@@ -1,3 +1,5 @@
+# TC : getMin - O(1), insert, remove - O(LogN) 
+# SC : O(N)
 class MinHeap:    
     def __init__(self):
         self.heap = []

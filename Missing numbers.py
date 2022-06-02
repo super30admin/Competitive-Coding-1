@@ -1,3 +1,5 @@
+#TC: O(n)
+#SC: O(n) - because we sum
 class Solution(object):
     def missingNumber(self, nums):
         """
