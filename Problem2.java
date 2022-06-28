@@ -1,4 +1,6 @@
-
+//TC=O(logn)
+//Sc=O(1)
+//Amazon interview
 // Java Program to Implement Heaps
 // by Illustrating Min Heap
 

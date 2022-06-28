@@ -1,7 +1,11 @@
-// A binary search based program
+// //TC=O(logn)
+//Sc=O(1)
+//Google interview
+//A binary search based program
 // to find the only missing number
 // in a sorted array of distinct
 // elements within limited range.
+
 import java.io.*;
  
 class GFG {
