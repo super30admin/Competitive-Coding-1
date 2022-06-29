@@ -27,4 +27,6 @@ public static void main(String[] args) {
    int ar[] = {1,2,3,4,5,7,8};
    int size = ar.length;
    System.out.println(search(ar,size));
+
+    }   
 }
