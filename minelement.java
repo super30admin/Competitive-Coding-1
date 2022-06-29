@@ -6,7 +6,7 @@ public class Main {
 
     int low=0;
     int high= size-1;
-   // to check if no element missing, return-1
+   // to check if no element missing || only one element present, return-1
      if(ar[high]-high!= ar[low]-low){
      while(low<=high){
        int mid = low +(high-low)/2;
