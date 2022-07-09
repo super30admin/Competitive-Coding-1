@@ -1,0 +1,12 @@
+class Solution:
+    def missingElement(self, nums: List[int], k: int) -> int:
+        low = 0 
+        high = len(nums) - 1
+        
+        while low <= high:
+            mid = (low + high)// 2
+            if nums[mid] - nums[0] - mid < k:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return nums[0] + high + k

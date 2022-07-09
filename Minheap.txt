@@ -1,0 +1,55 @@
+class MinHeap:
+    def __init__(self):
+        self.heap = []
+    def GetMin(self):
+        return self.heap[0]
+    def size(self):
+        return len(self.heap)
+    def insert(self,num):
+        self.heap.append(num)
+        self.bubbleup(self.size() - 1)
+        
+    def remove(self):
+        self.heap[0], self.heap[self.size()-1] = self.heap[self.size() - 1], self.heap[0]
+        temp = self.heap.pop()
+        self.bubbledown(0)
+        return temp
+    
+    def bubbleup(self,index):
+        if index == 0:
+            return
+        parent = (index - 1)//2
+        if parent >= 0 and self.heap[index] < self.heap[parent]:
+            self.heap[parent], self.heap[index] = self.heap[index], self.heap[parent]
+            self.bubbleup(parent)
+            
+            
+    def bubbledown(self,index):
+        left = 2*index + 1
+        right = 2*index + 2
+        
+        temp = index
+        
+        if left < self.size() and self.heap[left] < self.heap[temp]:
+            temp = left
+        if right < self.size() and self.heap[right] < self.heap[temp]:
+            temp = right
+            
+        if temp == index:
+            return 
+        
+        self.heap[index], self.heap[temp] = self.heap[temp], self.heap[index]
+        self.bubbledown(temp)
+        
+obj = MinHeap()
+nums = [15,28,16,32,31,20]
+for i in nums:
+    obj.insert(i)
+    print(obj.heap)
+    
+for i in nums:
+    print(obj.remove())
+    print(obj.heap)
+        
+        
+            
