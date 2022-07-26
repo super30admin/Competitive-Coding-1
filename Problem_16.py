@@ -1,3 +1,8 @@
+# Time Complexity : O(log n) for operations insert() and extractMin. O(1) for getMin which is just the root of the heap itself
+# Space Complexity : O(1) auxiliary space needed
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
+
 import sys
 
 class MinHeap:
@@ -25,7 +30,7 @@ class MinHeap:
     
     def minHeapify(self,pos):
         # Important function, it is used to adjusgt the heap in such a way that it maintains the property of min heap
-        # i.e this method will make sure that heap at node pos follows heap property that parent node has greater value than iyts children and left child is smaller than right child
+        # i.e this method will make sure that heap at node pos follows heap property that parent node has greater value than its children
         if not self.isLeaf(pos):
             # If the node is not a leaf node
             if( self.Heap[pos]>self.Heap[self.leftChild(pos)] or self.Heap[pos]>self.Heap[self.rightChild(pos)]):
@@ -36,7 +41,6 @@ class MinHeap:
                     self.swap(pos, self.leftChild(pos))
                     self.minHeapify(self.leftChild(pos)) # Now we recursively call minHeapify on the left child of pos (which was parent previously before getting swapped with its left child in earlier step)
                     #  We call minHeapify recursively because we need to make sure that the nodes on the leftchild side follow the min heap properties
-                    # In our condition left child < right child so we need not call minheapify on right child as well
                 else:
                     # If left child is not less than right child, then we swap pos with the right child instead
                     # We know pos is greater than left child as otherwise we would not enter this if statement in the first place
@@ -60,7 +64,7 @@ class MinHeap:
             current = self.parent(current) # Update current after swapping
         # At the end, element will reach its correct place in the min heap
 
-    def remove(self):
+    def extractMin(self):
         popped = self.Heap[self.FRONT] # The popped element will be Heap[1]
         self.Heap[self.FRONT] = self.Heap[self.size] # Take the last element which is a leaf node and make it as root
         # Since we are popping root, put the leaf node at the root and apply minHeapify to it and it will balance out after a few steps
@@ -74,6 +78,8 @@ class MinHeap:
             print(" PARENT : "+ str(self.Heap[i])+" LEFT CHILD : "+ 
                                 str(self.Heap[2 * i])+" RIGHT CHILD : "+
                                 str(self.Heap[2 * i + 1]))
+    def getMin(self):
+        return self.Heap[self.FRONT]
     
 # Driver Code
 if __name__ == "__main__":
@@ -92,4 +98,6 @@ if __name__ == "__main__":
     minHeap.minHeap()
   
     minHeap.Print()
-    print("The Min val is " + str(minHeap.remove()))
+    print("The Min val is " + str(minHeap.extractMin()))
+    print("The Min value after extractMin is " + str(minHeap.getMin()))
+    minHeap.Print()
