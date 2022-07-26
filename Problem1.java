@@ -6,14 +6,12 @@ class Problem1 {
         int n = sc.nextInt();
         int sum = 0;
         int lastElement = 0;
-        sc.useDelimiter("\\D");
         for (int i = 0; i < n; i++) {
             int in = sc.nextInt();
             if(i == n -1)
                 lastElement = in;
             sum += in;
         }
-        System.out.println(lastElement);
         int actualSum = (lastElement * (lastElement + 1))/ 2;
         System.out.println("Output: " + (actualSum - sum));
     }
