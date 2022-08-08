@@ -1,6 +1,6 @@
 
 //Time complexity: O(log n)
-//Space Complexity: O(n)  // where n is the no. of nodes of the heap.
+//Space Complexity: O(n)
 import java.util.Arrays;
 
 class MinHeap {
