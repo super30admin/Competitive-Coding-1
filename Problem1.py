@@ -1,3 +1,7 @@
+# Time Complexity : O(log n)
+# Space Complexity : O(1)
+# Did this code successfully run on Leetcode : problem not on leetcode
+
 from typing import List
 def search(arr: List[int], size: int) -> int:
     l, r = 0, size - 1

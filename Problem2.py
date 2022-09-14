@@ -1,3 +1,7 @@
+# Time Complexity : getMin() - O(1), extractMin() - O(log n), insert() - O(log n)
+# Space complecity : O(1) for getMin(), extractMin(), insert()
+# Did this code successfully run on Leetcode : Problem not on leetcode
+
 class MinHeap:
     def __init__(self, capacity: int) -> None:
         self.storage  = [0] * capacity
