@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #15 {Easy}
+ FAANMG Problem #15 {Easy}
 
 
 Q Provide an array of n-1 integers in the range of 1 to n with no duplicates in list, One of the integers is missing in the list. Write a code to find the missing integer.
