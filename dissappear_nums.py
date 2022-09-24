@@ -1,3 +1,9 @@
+#time complexity:o(n) ite over actual ar and new arr
+#space complexity:o(n) creating extra arr
+#passed all cases on LeetCode: yes
+#difficulty faced:-
+# comments:
+#https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 class Solution:
     def findDisappearedNumbers(self, nums: 'List[int]') -> 'List[int]':
 
