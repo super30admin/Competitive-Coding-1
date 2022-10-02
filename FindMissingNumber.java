@@ -48,3 +48,6 @@ class FindMissingNumber{
         System.out.print("*** Missing Number="+output);
     }
 }
+
+//Time Complexity: O(log n)
+//Space Complexity: O(1) 

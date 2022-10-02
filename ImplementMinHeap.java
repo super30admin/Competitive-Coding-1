@@ -112,3 +112,8 @@ class ImplementMinHeap{
         }
     }
 }
+
+//Time Complexity: get minimum => O(1) // root element
+//                 Insert => O(log n) => may need to heapify up
+//                 Remove => O(log n) => may need to heapify down
+//Space Complexity: O(n) 
