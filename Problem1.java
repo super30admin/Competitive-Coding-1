@@ -44,3 +44,45 @@ public class Main {
 	}
 }
 
+
+// Alternate simpler approach
+public class Main {
+	static int search(int nums[], int size)
+	{
+        if (nums == null || nums.length == 0)
+            return -1;
+        
+        int n = nums.length - 1;
+        int low = 0, high = n;
+        
+        // The array is fully sorted and there are no missing elements
+        if (nums[low] - low == nums[high] - high)
+            return -1;
+        
+        while (high - low > 1) {
+            int mid = low + (high - low) / 2;
+            
+            if (nums[low] - low != nums[mid] - mid) {
+                high = mid;
+            } else if (nums[high] - high != nums[low] - low) {
+                low = mid;
+            }
+        }
+        
+        // If the numbers are sorted in descending order
+        if (nums[0] > nums[n])
+            return nums[low] - 1;
+        else // If numbers are sorted in ascending order
+            return nums[low] + 1;
+	}
+
+	// Driver Code
+	public static void main(String[] args)
+	{
+		int ar[] = {8,7,6,4,3,2,1};
+		int size = ar.length;
+		System.out.println("Missing number: "
+						+ search(ar, size));
+	}
+}
+
