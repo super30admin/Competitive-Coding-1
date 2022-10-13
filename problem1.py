@@ -1,4 +1,5 @@
 # Time Complexity: O(log(n))
+# Space Complexity: O(1)
 # Aproach: if the condition on line 12 is met then move right
 # else move left till you converge
 
