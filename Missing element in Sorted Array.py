@@ -1,3 +1,8 @@
+# Time complexity: O(logn)
+# Space complexity: O(1)
+# Does this code run on Leetcode: Yes
+# Did you face any dicciculty in coding the solution: No
+
 def search(nums, l):
     s, e = 0, len(nums)-1
     while (s<=e):
