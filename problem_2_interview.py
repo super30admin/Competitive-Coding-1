@@ -1,4 +1,9 @@
 # Python3 implementation of Min Heap
+# // Time Complexity : to find min element O(1)
+# // Space Complexity : O(1)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : No
+
 
 from cgitb import small
 from heapq import heapify
