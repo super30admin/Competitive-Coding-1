@@ -6,7 +6,7 @@ class Node():
         self.priority=priority
         self.next=None
 
-class LL():
+class PriorityQueue():
     def __init__(self):
         self.head=Node(-1,-1)   #dummy head
 
@@ -31,7 +31,7 @@ class LL():
             print(itr.next.val,itr.next.priority, end=", "); itr=itr.next
         print()
 
-ll=LL()
+ll=PriorityQueue()
 ll.push(0,0)
 ll.push(1,1)
 ll.push(2,2)
