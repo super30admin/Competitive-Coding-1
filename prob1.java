@@ -15,3 +15,6 @@ class Solution{
       return (arr[low]+1);
     }// method closing
 }
+
+//TC = O(Log n) 
+//SC = O(1)
