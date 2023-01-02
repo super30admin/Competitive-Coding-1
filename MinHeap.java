@@ -1,4 +1,13 @@
 // MinHeap Implementation
+// Time Complexity : Insert, delete - O(log n), 
+//peek/getmin O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this :No
+
+
+// Your code here along with comments explaining your approach
+
 public class MinHeap{
     int[] heap;
     int size;
