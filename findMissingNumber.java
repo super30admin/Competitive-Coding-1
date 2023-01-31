@@ -10,11 +10,12 @@
 */
 
 // [1,2,3,4,6,7,8]
-class findMissingNumber {
+public class FindMissingNumber {
     public int missingNumber(int[] nums) {
         if(nums == null || nums.length == 0)
             return Integer.MIN_VALUE;
-
+        if(nums[0] != 1)
+            return 1;
         int start = 0, end = nums.length - 1;
 
         while(start <= end) {
@@ -27,5 +28,11 @@ class findMissingNumber {
                 end = mid - 1;
         }
         return Integer.MIN_VALUE;
+    }
+
+    public static void main() {
+        int[] nums = {1,2,3,4,5,7,8}
+        FindMissingNumber findMissingNumber = new FindMissingNumber();
+        System.out.println(findMissingNumber.missingNumber(nums)); //6
     }
 }
