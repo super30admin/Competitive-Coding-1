@@ -24,4 +24,25 @@ class CP1 {
 		}
 		return ans;
 	}
+	
+	public static int result(int[] arr) {
+		int l = 0, h = arr.length - 1;
+		while(h - l > 2) {
+			int mid = (l+h)/2;
+			int midDiff = arr[mid] - mid;
+			int lowDiff = arr[l] - l;
+			int highDiff = arr[h] - h;
+			if(midDiff != lowDiff)
+				h = mid - 1;
+			else
+				l = mid + 1;		
+		}
+		return (arr[l] +arr[h])/2;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("GfG!");
+		int[] arr = { 2, 4, 5, 6, 7, 8, 9 };
+		System.out.println(result(arr));
+	}
 }
