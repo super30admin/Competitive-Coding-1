@@ -1,0 +1,92 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.ArrayList;
+
+class MinHeap {
+    ArrayList<Integer> heap;
+    
+    MinHeap(int max_size){
+        this.heap = new ArrayList<Integer>();
+    }
+    
+     // TimeComplexity  - logn
+     
+     public void insert(int n){
+            heap.add(n);
+            bubbleUp(heap.size()-1);
+    }
+    
+    // TimeComplexity  - logn
+    
+    public int removeMin() {
+        int res = 0;
+        if(heap.size()==0)
+            return -1;
+        else
+        {
+            res = heap.get(0);
+            heap.set(0,heap.get(heap.size()-1));
+            heap.remove(heap.size()-1);
+            bubbleDown(0);
+        }
+        return res;
+    }
+    
+       public void print(){
+        for(int i:heap)
+        System.out.print(i+"\t");
+        System.out.println();
+    }
+    
+     private void bubbleUp(int idx){
+        int parentIdx = (idx-1)/2;
+        if(idx==0||(heap.get(parentIdx)<=heap.get(idx)))
+            return;
+        else
+        {
+            int temp = heap.get(idx);
+            heap.set(idx, heap.get(parentIdx));
+            heap.set(parentIdx, temp);
+            bubbleUp(parentIdx);
+        }
+    }
+    
+     public void bubbleDown(int idx){
+        int left = idx*2 + 1;
+        int right = idx*2 + 2;
+        int min = idx;
+        if(right<heap.size()&&heap.get(right)<heap.get(min))
+            min = right;
+        if(left<heap.size()&&heap.get(left)<heap.get(min))
+            min = left;
+        if(min==idx)
+            return;
+        int temp = heap.get(idx);
+        heap.set(idx, heap.get(min));
+        heap.set(min, temp);
+        bubbleDown(min);    
+    }
+
+
+    public static void main(String[] args) {
+        int max_size = 15;
+        MinHeap heap = new MinHeap(max_size); 
+        int[] insertOrder = {10,15,5,40,20,30};
+        System.out.println("Inserting");
+        for(int i:insertOrder){
+            heap.insert(i);
+            heap.print();
+        }
+         System.out.println("Removing");
+         System.out.println( heap.removeMin());
+         System.out.println( heap.removeMin());
+         System.out.println( heap.removeMin());
+         System.out.println( heap.removeMin());
+         System.out.println( heap.removeMin());
+         System.out.println( heap.removeMin());
+         System.out.println( heap.removeMin());
+    
+        
+        
+    }
+}
