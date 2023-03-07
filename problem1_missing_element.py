@@ -1,6 +1,8 @@
 
 # find the only missing number in a sorted
 # in a sorted array of distinct elements
+# Time Complexity - O(logn)
+# Space Complexity - O(1)
 
  
  
