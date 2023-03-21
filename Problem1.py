@@ -1,3 +1,5 @@
+# T.c-> O(log n)
+# S.c-> O(1)
 def find_missing_element(arr):
     low= 0
     high= len(arr)-1
