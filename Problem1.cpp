@@ -3,7 +3,7 @@
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 
-// 
+//We can compare midIDiff, lowIDiff and highIDiff to run binary search to find missing element.
 
 #include <iostream>
 using namespace std;
@@ -11,6 +11,12 @@ int missing(int arr[])
 {
     int size = arr.size();
     int low = 0, high = size-1, mid =0;
+
+    if (arr[0] != 1)
+            return 1;
+    if (arr[size - 1] != (size + 1))
+            return size + 1;
+
     while(high-low >= 2)
     {
 
