@@ -1,3 +1,5 @@
+// Time Complexity : O(log(n))
+// Space Complexity : O(1)
 class FindMissingElement {
     public int findMissing(int arr[]) {
         if (arr == null || arr.length == 0)
@@ -24,7 +26,7 @@ class FindMissingElement {
 public class Problem1 {
     public static void main(String[] args) {
         FindMissingElement ob = new FindMissingElement();
-        int arr[] = { 2, 3, 4, 5, 6, 7, 8, 9 };
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 9 };
         System.out.println(ob.findMissing(arr)); // Output: 8
     }
 }
