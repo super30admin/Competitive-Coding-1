@@ -1,3 +1,12 @@
+'''
+Implementing minHeap using an array
+
+TC: 
+add O(n)
+removal O(n)
+get minimum O(1)
+SC: O(n)
+'''
 class minHeap:
     #Initialize an empty array (heap) and maintain a variable that has it's capacity
     def __init__(self,capacity=10) -> None:
