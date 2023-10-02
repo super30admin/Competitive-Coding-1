@@ -1,3 +1,9 @@
+// # Competivive Coding 1
+// ## Problem 1:  https://www.geeksforgeeks.org/find-the-missing-number-in-a-sorted-array/
+// Time Complexity : 0(log n)
+// Space Complexity : 0(1)
+// Did this code successfully run on geeksforgeeks : Yes
+// Any problem you faced while coding this : I didnt face any problem while coding this.
 import java.io.*;
  
 class MissingElement {
