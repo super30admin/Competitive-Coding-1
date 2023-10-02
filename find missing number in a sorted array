@@ -1,0 +1,22 @@
+#time complexity: O(logn)
+#space complexity: O(1)
+class Solution:
+    def missingNumber(self,array,n):
+        array.sort()                        #first sorting the array
+        length = len(array)
+        low, high = 0, length-1
+        if array[0]!=1:                     #if array does not start with 1 then the missing number is 1
+            return 1
+        elif array[high]!=length+1:         #if array last number is not n then missing number is n
+            return array[high]+1
+         
+        while(low<=high):                    #doing binary search #logic used is matching indices with the number
+            mid = low+(high-low)//2
+            if array[mid] == mid:            #if number at mid matches the mid index then no missing number
+                return -1
+            elif array[mid]>mid+1:           #if number at mid is greater than its index+1 then missing number is in left side and we move towards it else towards right
+                high =mid-1
+            else: low = mid+1
+            
+        x = (array[low]+array[high])//2     #calculate missing number and return it
+        return x
