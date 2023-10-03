@@ -31,8 +31,9 @@ public class Main {
         if(nums[n] == n+1) return n+2;
         while(l<=r){
             int mid = l + (r-l)/2;
-            if (nums[mid] == mid+2 && nums[mid-1] == mid ){
-                return mid+1 ;
+           if ( mid ==n || nums[mid] == mid+2 && 
+                (mid ==0 || nums[mid-1] == mid )){     
+               return mid+1 ;
             }
             else if(nums[mid] == mid+1) 
                 l = mid+1;
