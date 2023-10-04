@@ -16,7 +16,7 @@ public class Problem1{
             }
         }
 
-        return arr[low];
+        return arr[low] -1;
     }
 
     public static void main(String[] args){
