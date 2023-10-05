@@ -1,3 +1,29 @@
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+/**
+ * Given 1 # is missing => so the size of nums will be n-1
+ * expected size = n
+ * 
+ * Brute:
+ * a. run a loop from 1 to n
+ * b. check if the num exists at the num-1 index
+ * c. if no => missing # found
+ * TC: O(n)
+ * SC: O(1)
+ * 
+ * Optimization:
+ * from O(n) -> O(log n) -> we're searching in a sorted space and we need to
+ * reduce the TC to O(log n) => Apply Binary Search
+ * 
+ * a. sorted search space == [1, n]
+ * b. if(nums[mid - 1] != mid) => missing # found
+ * c. reduce the search space:
+ * 1. left reject: if left size == expected left size => nums[mid-1] -
+ * nums[lo-1] == mid - lo => update lo = mid+1
+ * 2. right reject: if right size == expected right size => nums[hi-1] -
+ * nums[mid+1] == hi - mid => update hi = mid-1
+ */
 public class MissingElement {
 
     /**
