@@ -28,3 +28,5 @@ class Solution{
         return -1;
     }
 };
+
+// can be done in O(n) as well by taking xors of the index and the numbers in the array
