@@ -1,4 +1,6 @@
 // // "static void main" must be defined in a public class.
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
 public class Problem1 {
     public static void main(String[] args) {
         int[] nums = {1,3};
