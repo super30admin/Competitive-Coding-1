@@ -1,7 +1,7 @@
 
 /*
  * Time complexity : O(log n)
- * space complexity : O(n) 
+ * space complexity : O(1) 
  */
 
 import java.io.*;
