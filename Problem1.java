@@ -29,7 +29,7 @@ class Problem1 {
             }
         }
 
-        // if
+        // if no missing element
         if (nums[low] == low + 1) {
             return -1;
         } else {
