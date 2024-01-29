@@ -1,9 +1,14 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+// Time complexity: O(logn)
+// Space complexity: O(1)
+/* Approach: If mid value = mid + 1; then left side is fine, move to right side.
+ * If mid value != mid + 1; then element lies on the left. When the loop exits,
+ * the low pointer points to the first element that is out of order (if there's one).
+ * So, return either low + 1 or nums[low] - 1
+*/
 
 class Problem1 {
     public static void main(String[] args) {
-        System.out.println(findMissingElement(new int[] { 1, 2, 3, 4, 5, 6, 7 }));
+        System.out.println(findMissingElement(new int[] { 1, 2, 4, 5, 6, 7 }));
     }
 
     public static int findMissingElement(int[] nums) {
@@ -24,7 +29,7 @@ class Problem1 {
             }
         }
 
-        // if the said value does not exist
+        // if
         if (nums[low] == low + 1) {
             return -1;
         } else {
