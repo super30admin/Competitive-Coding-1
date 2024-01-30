@@ -1,5 +1,6 @@
 // Time complexity: O(log n)
 // Space Complexity: O(1)
+// Approach:we can implement it using Binary search with TC o(log n). check the element at a[0]. find the mid. if a[mid]-a[0] == mid then the missing element is at the right side or it will be at the left side.
 
 class GFG {
     public int missing(int[] a, int n) {
