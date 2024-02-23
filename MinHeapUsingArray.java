@@ -38,6 +38,8 @@ class MinHeapUsingArray {
             return this.arr[0];
         }
 
+        //Time complexity: O(n)
+        //Space complexity: O(1)
         private void insertElementMin(int element) {
 
             // if size is at full capacity can't insert new Elements
@@ -62,6 +64,8 @@ class MinHeapUsingArray {
             }
         }
 
+        //Time complexity: O(n)
+        //Space complexity: O(1)
         private void deleteMinElement() {
             if (this.size == 0) {
                 return;
@@ -80,6 +84,8 @@ class MinHeapUsingArray {
         }
     }
 
+    //Time complexity: O(logn)
+    //Space complexity: O(logn)
     private static void minHeapify(int arr[], int nodeIdx, int arrSize) {
         if (arrSize <= 1) {
             return;
@@ -102,6 +108,8 @@ class MinHeapUsingArray {
         }
     }
 
+    //Time complexity: O(logn)
+    //Space complexity: O(logn)
     private static void maxHeapify(int arr[], int nodeIdx, int arrSize) {
         if (arrSize <= 1) {
             return;
@@ -138,6 +146,8 @@ class MinHeapUsingArray {
         }
     }
 
+    //Time complexity: O(n)
+    //Space complexity: 
     private static void printHeap(int arr[], int N, String msg) {
         System.out.printf(
                 "Array representation of %sHeap is: ", msg == null ? "" : msg);
@@ -158,6 +168,8 @@ class MinHeapUsingArray {
         arr[i] = arr[i] + (~arr[j]) + 1;
     }
 
+    //Time complexity: O(nlogn)
+    //Space complexity: O(logn)
     private static void heapSort(int arr[]) {
         int arrSize = arr.length;
         if (arrSize <= 1) {
