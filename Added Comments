@@ -1,0 +1,11 @@
+Find Number in Sorted Array:
+TC = O(logn)
+SC = O(1)
+
+
+Min Heap:
+TC = insert: O(logn)
+     getmin(): O(1)
+SC = O(1)
+     for creating: O(n)
+
