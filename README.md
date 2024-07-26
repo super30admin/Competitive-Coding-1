@@ -1,3 +1,4 @@
 # Competitive-Coding-1
 
-Please submit the interview problems posted in slack channel here. The problems and statements are intentionally not shown here so that students are not able to see them in advance 
+## Problem1 (https://www.geeksforgeeks.org/find-the-missing-number-in-a-sorted-array/)
+## Problem2 (https://www.geeksforgeeks.org/min-heap-in-java/)
