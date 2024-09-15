@@ -1,0 +1,11 @@
+# Python code for missing element in sorted array
+def search(ar, size):
+  low=0
+  high=size-1
+  while(low+1)<high:
+    mid=low+(high-low)/2
+    if(ar[mid]-ar[low] == mid-low):
+      low=mid
+    else:
+      high=mid
+  return ar[low]+1
