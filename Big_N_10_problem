@@ -1,0 +1,15 @@
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        n=len(nums)
+        if nums[0] == 0:
+            total = n*(n+1)/2
+        else: 
+            total = (n+1)*(n+2)/2
+        sum_a=sum(nums)
+        return total-sum_a
+        
