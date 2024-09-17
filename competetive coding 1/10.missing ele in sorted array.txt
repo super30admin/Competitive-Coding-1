@@ -1,0 +1,61 @@
+class Demo
+{
+
+    public static int search(int[] a)
+
+    {
+
+        int h=a.length-1;
+
+        int l=0,mid=0;
+
+        while(l<=h)
+
+        {
+
+            mid=l+(h-l)/2;
+
+            if(l==mid)
+
+            {
+
+                if(l==0 && a[l]==2)
+
+                return a[l]-1;
+
+                else
+
+                return a[l]+1;
+
+            }
+
+            if(mid+1 < a[mid])
+
+            {
+
+                h=mid;
+
+            }
+
+            else
+
+            l=mid;
+
+           
+        }
+
+        return 0;
+
+    }
+
+    public static void main (String[] args)
+ 
+    {
+
+        int [] a=new int[]{1,2,3,4,6};
+
+        System.out.println(search(a));
+
+    }
+
+}
