@@ -1,0 +1,14 @@
+Missing number
+def search(ar, size):
+  low=0
+  high=len(ar)-1
+  while (high-low)>=2:
+    mid=(low+high)//2
+    diffofmid=ar[mid]-mid
+    diffoflow=ar[low]-low
+    if diffofmid==diffoflow:
+      low=mid
+    else:
+      high=mid
+  return (ar[low]+ar[high])//2
+
