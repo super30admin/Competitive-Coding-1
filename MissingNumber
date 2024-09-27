@@ -1,0 +1,32 @@
+//Time complexity: O(logn)
+//space complexity: O(1)
+
+class MissingNumber {
+    public int missingNumber(int[] nums) {
+       // Arrays.sort(nums);
+        int left=0;
+        int right=nums.length-1;
+        
+        if(nums[right]!= right+1){
+            return right+1;
+        }
+        if(nums[0]!=0){
+            return 0;
+        }
+
+
+        while(right-left>=2){
+            int mid= left+(right-left)/2;
+            int midDiff= nums[mid]-mid;
+            int leftDiff= nums[left]-left ;
+            if(midDiff!=leftDiff){
+                right=mid;
+            }
+            else {
+                left=mid;
+            }
+           
+        }
+        return (nums[left]+nums[right])/2;
+    }
+}
