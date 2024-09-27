@@ -1,0 +1,21 @@
+# Time Complexity : O(logn) where n is length of input array
+# Space Complexity : O(1)
+# Any problem you faced while coding this : Mock Interview-1 Q (struggled a little)
+
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        start = 0
+        end = len(nums) - 1
+        
+        while start <= end:
+            mid = start + (end-start)//2
+            if mid + 1 == nums[mid]:
+                start = mid + 1
+            else:
+                end = mid - 1
+        
+        return start + 1 if start + 1 == len(nums) else -1
