@@ -1,0 +1,14 @@
+# Let's say nums = [4,5,7,1,2,3]
+
+low = 0
+high = len(nums) - 1
+
+while low <= high:
+	mid = low + (high-low)//2
+	
+	if nums[mid] - mid == 1:
+		low = mid + 1
+	else:
+		high= mid - 1
+	
+return nums[low] + 1
