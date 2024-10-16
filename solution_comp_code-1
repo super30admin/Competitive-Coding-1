@@ -1,0 +1,7 @@
+# space complexity : O(1)
+# time complexity : O(n)
+# compiles on LC : yes 
+def missingNumber(self, nums):
+    expected_sum = len(nums)*(len(nums)+1)//2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
