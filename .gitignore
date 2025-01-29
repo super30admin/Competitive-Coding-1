@@ -1,0 +1,10 @@
+# Ignore VS Code settings
+.vscode/
+
+# Ignore compiled files
+*.class
+*.o
+
+# Ignore dependencies
+node_modules/
+target/
