@@ -1,3 +1,6 @@
+# Time Complexity: O(log n) for insert and remove_min operations
+# Space Complexity: O(n) for storing the heap
+
 class MinHeap:
     def __init__(self, array=None):
         self.heap = []
