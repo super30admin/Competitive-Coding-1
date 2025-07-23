@@ -1,0 +1,21 @@
+# Time Complexity : It is O(n) since we are iterating length of the list.
+# Space Complexity : It is O(1) not creating the extra.
+# Did this code successfully run on Leetcode : It was problem in greekforgeeks.
+# Any problem you faced while coding this : No
+
+from typing import List
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        
+        numsLen = len(nums)
+        count = 0
+        for i in range(1,numsLen+1):
+            if nums[i-1] != i:
+                return i
+            count +=+1
+
+obj =Solution()
+#print(obj.missingNumber([1, 2, 3, 4, 6, 7, 8]))
+print(obj.missingNumber([1, 2, 3, 4, 5, 6, 7, 9]))
+        
