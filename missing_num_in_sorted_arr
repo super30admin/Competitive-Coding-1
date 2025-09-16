@@ -1,0 +1,13 @@
+class solution(object):
+    def missing_number_bs(self, arr):
+
+        low, high = 0, len(arr) - 1
+        while low <= high:
+            mid = (low + high) // 2
+            expected = mid + 1          
+            if arr[mid] == expected:
+                low = mid + 1           # missing is to the right
+            else:
+                high = mid - 1          # missing is to the left (or here)
+
+        return low + 1                   # the missing number
