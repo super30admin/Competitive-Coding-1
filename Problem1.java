@@ -1,24 +1,37 @@
-// Time Complexity : O(n) because we traverse the array once and HashMap operations take O(1) on average
-// Space Complexity : O(n) for storing numbers and their indices in the HashMap
+// Time Complexity : O(log n) because we use Binary Search on the sorted array
+// Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
 
 // Your code here along with comments explaining your approach in three sentences only
-// We use a HashMap to store each number along with its index as we iterate through the array.
-// For every number, we calculate the required complement needed to reach the target and check whether it already exists in the map.
-// If the complement exists, we return the stored index and current index as the required pair; otherwise, we store the current number and continue.
+// We use Binary Search to find the first index where the expected value and actual value do not match.
+// Before the missing number, nums[i] == i + 1 holds true, and after the missing number this relationship breaks.
+// The first mismatching position helps us determine the missing number directly.
 
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> hashMap = new HashMap<>();
-        for (int i=0; i<nums.length; i++) {
-            int diff = target - nums[i];
-            if (hashMap.containsKey(diff)) {
-                return new int[] {hashMap.get(diff), i};
+
+    public int missingNumber(int[] nums) {
+
+        int low = 0;
+        int high = nums.length - 1;
+
+        while (low <= high) {
+
+            int mid = low + (high - low) / 2;
+
+            // left side is correct
+            if (nums[mid] == mid + 1) {
+                low = mid + 1;
             }
-            hashMap.put(nums[i], i);
+
+            // missing number lies on left side
+            else {
+                high = mid - 1;
+            }
         }
-        return new int[] {};
+
+        // missing number
+        return low + 1;
     }
 }
