@@ -1,6 +1,7 @@
 #Method 1 - Linear search with index - O(n)
 #Method 2 - Same idea but with Binary Search - O(logn)
-#Idea is that if the difference between an element and its index same as mid element and its index the missing number is in this half if not the other
+#Idea is that if the difference between an element and its index is same as mid element and its index then the missing number is 
+#in the other half if not in this half
 
 class Solution:
     def missingNum(self, arr: list[int]) -> int:
